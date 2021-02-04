@@ -6,13 +6,11 @@
 
 body {
     margin: 0;
-    background-color: #ffeeee;
-    background: fixed;
 }
 
 /* BORDURE */
 #top, #bottom, #left, #right {
-	background: #FDB833;
+	background: #FF4338;
 	position: fixed;
 }
 #left, #right {
@@ -40,7 +38,7 @@ body {
 #main-wrapper {
     text-align: center;
     margin: 180px auto 50px auto;
-    font-family: 'Hind Guntur';
+    font-family: 'Courier';
     color: #2D3142;
 }
 
@@ -51,7 +49,7 @@ p {
 img {
     margin-bottom: 50px;
     border-radius: 500px;
-    box-shadow: 0 0 0 0 #ff9d97;
+    box-shadow: 0 0 0 0 #ffdbd9;
     animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
 
 }
