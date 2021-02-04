@@ -1,0 +1,63 @@
+// MAIN
+@import "variables";
+@import "animations";
+
+// PAGES
+@import "pages/home.scss";
+@import "pages/edito.scss";
+
+// TEMPORAIRES
+@import "temp/bordures";
+
+// -------------------------------------
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main-wrapper {
+    width: 100%;
+    font-family: 'Courier';
+    color: $dark-color-main;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    background-color: $accent-color-main;
+    padding: 15px 50px;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    ul {
+        list-style: none;
+        height: auto;
+    }
+    li {
+        margin: 0 40px;
+        text-transform: uppercase;
+        display: inline-block;
+        font-weight: bold;
+    }
+    a {
+        color: $light-color-main;
+    }
+    @include mQ(map-get($breakpoints, medium)) {
+        background-color: green;
+    }
+}
+
+
+
+#main-logo {
+    position: fixed;
+    top: 38px;
+    left: 80px;
+    z-index: 1;
+}

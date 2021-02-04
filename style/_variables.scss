@@ -1,0 +1,13 @@
+// COULEURS
+$accent-color-main: #FF4338;
+$dark-color-main: #090F29;
+$light-color-main: #fff;
+
+//MEDIA QUERY
+$breakpoints: (medium: 900px, small: 500px);
+
+@mixin mQ ($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}

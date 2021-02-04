@@ -1,0 +1,21 @@
+#intro-container {
+    height: 450px;
+    background-image: url(../../images/boombox.jpg);
+    background-repeat: no-repeat;
+    padding-top: 250px;
+    margin-bottom: 100px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 20px -20px #333;
+    h1 {
+        width: 80%;
+        margin: auto;
+        font-size: 4rem;
+    }
+}
+
+div#contact, div#services {
+    width: 70%;
+    margin: auto;
+}
+
