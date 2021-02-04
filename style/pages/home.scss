@@ -20,33 +20,90 @@
   }
 }
 
-div#contact, div#services, div#profil {
-  width: 70%;
-  margin: auto;
+.flip-card {
+    width: 500px;
+    height: 250px;
+    margin: 150px auto;
+    background-color: transparent;
+    border: 1px solid $light-color-main;
+    perspective: 1000px;
+    z-index: 3;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: $shadow-bottom;
+}
+.flip-card-front {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $accent-color-complement;
+    color: $light-color-main;
+    img {
+        border-radius: 500px;
+        width: 180px;
+    }
+    p {
+        text-align: center;
+        display: block;
+        text-transform: uppercase;
+        &:first-child {
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+    }
+
+}
+.flip-card-back {
+    background-color: $dark-color-main;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 div#services {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: $accent-color-main;
+  padding: 0 80px;
   div {
     flex: 1;
-    margin: 0 20px;
+    margin: 25px 25px;
     padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: lighten($dark-color-main, 95);
+    background-color: $light-color-main;
     box-shadow: $shadow-bottom;
     img {
       width: 128px;
       margin: 35px;
     }
   }
-}
-
-div#profil {
-
+  @include maxSize(map-get($breakpoints, medium)) {
+      flex-direction: column;
+  }
 }
