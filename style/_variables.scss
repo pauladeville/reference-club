@@ -1,13 +1,22 @@
 // COULEURS
 $accent-color-main: #FF4338;
-$dark-color-main: #090F29;
+$dark-color-main: #000;
 $light-color-main: #fff;
 
 //MEDIA QUERY
 $breakpoints: (medium: 900px, small: 500px);
 
-@mixin mQ ($size) {
-    @media screen and (max-width: $size) {
+@mixin maxSize ($max-size) {
+    @media screen and (max-width: $max-size) {
         @content;
     }
 }
+
+@mixin minSize ($min-size) {
+    @media screen and (min-width: $min-size) {
+        @content;
+    }
+}
+
+// OMBRE BOTTOM
+$shadow-bottom: 0 25px 25px -25px lighten($dark-color-main, 40);

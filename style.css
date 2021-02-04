@@ -58,7 +58,7 @@ img.logo-pulse {
   transform-origin: bottom left;
 }
 
-#intro-container {
+#main-title {
   height: 450px;
   background-image: url(../../images/boombox.jpg);
   background-repeat: no-repeat;
@@ -66,21 +66,49 @@ img.logo-pulse {
   margin-bottom: 100px;
   text-align: center;
   color: white;
-  box-shadow: 0 20px 20px -20px #333;
+  box-shadow: 0 25px 25px -25px #666666;
 }
-#intro-container h1 {
+#main-title h1 {
   width: 80%;
   margin: auto;
   font-size: 4rem;
 }
+@media screen and (max-width: 900px) {
+  #main-title h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  #main-title h1 {
+    font-size: 2rem;
+  }
+}
 
-div#contact, div#services {
+div#contact, div#services, div#profil {
   width: 70%;
   margin: auto;
 }
 
-#main-wrapper {
-  width: 80%;
+div#services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div#services div {
+  flex: 1;
+  margin: 0 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f2f2f2;
+  box-shadow: 0 25px 25px -25px #666666;
+}
+div#services div img {
+  width: 128px;
+  margin: 35px;
 }
 
 #border-top, #border-bottom, #border-left, #border-right {
@@ -116,6 +144,17 @@ div#contact, div#services {
   bottom: 0;
 }
 
+#logo-big {
+  display: flex;
+  margin: 150px auto;
+}
+
+p.construction {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -124,15 +163,15 @@ body {
 #main-wrapper {
   width: 100%;
   font-family: "Courier";
-  color: #090F29;
-  font-size: 1.2rem;
+  color: #000;
+  font-size: 1rem;
 }
 
 a {
   text-decoration: none;
 }
 
-nav {
+nav#desktop-nav {
   background-color: #FF4338;
   padding: 15px 50px;
   text-align: right;
@@ -140,23 +179,97 @@ nav {
   top: 0;
   right: 0;
   width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
-nav ul {
-  list-style: none;
-  height: auto;
-}
-nav li {
+nav#desktop-nav a {
+  display: inline-block;
+  color: #fff;
   margin: 0 40px;
   text-transform: uppercase;
   display: inline-block;
   font-weight: bold;
 }
-nav a {
-  color: #fff;
-}
 @media screen and (max-width: 900px) {
-  nav {
-    background-color: green;
+  nav#desktop-nav a {
+    display: none;
+  }
+}
+
+.hamburger {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+  z-index: 9;
+}
+.hamburger .bar, .hamburger::after, .hamburger::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+.hamburger.is-active::before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+.hamburger.is-active::after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+@media screen and (min-width: 900px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+nav#mobile-nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #FF4338;
+  padding-top: 150px;
+  z-index: 8;
+  transition: 0.4s;
+}
+nav#mobile-nav.is-active {
+  left: 0;
+}
+nav#mobile-nav a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  margin: 0 auto 26px;
+  padding: 12px 16px;
+  background-color: #fff;
+  color: #FF4338;
+  text-decoration: none;
+  box-shadow: 0 25px 25px -25px #666666;
+}
+nav#mobile-nav a:hover {
+  background-color: #ffbbb8;
+}
+@media screen and (min-width: 900px) {
+  nav#mobile-nav {
+    display: none;
   }
 }
 
@@ -165,6 +278,19 @@ nav a {
   top: 38px;
   left: 80px;
   z-index: 1;
+}
+@media screen and (max-width: 900px) {
+  #main-logo {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #main-logo {
+    width: 100px;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

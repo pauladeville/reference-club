@@ -1,21 +1,52 @@
-#intro-container {
-    height: 450px;
-    background-image: url(../../images/boombox.jpg);
-    background-repeat: no-repeat;
-    padding-top: 250px;
-    margin-bottom: 100px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 20px 20px -20px #333;
-    h1 {
-        width: 80%;
-        margin: auto;
-        font-size: 4rem;
-    }
-}
-
-div#contact, div#services {
-    width: 70%;
+#main-title {
+  height: 450px;
+  background-image: url(../../images/boombox.jpg);
+  background-repeat: no-repeat;
+  padding-top: 250px;
+  margin-bottom: 100px;
+  text-align: center;
+  color: white;
+  box-shadow: $shadow-bottom;
+  h1 {
+    width: 80%;
     margin: auto;
+    font-size: 4rem;
+    @include maxSize(map-get($breakpoints, medium)) {
+      font-size: 3rem;
+    }
+    @include maxSize(map-get($breakpoints, small)) {
+      font-size: 2rem;
+    }
+  }
 }
 
+div#contact, div#services, div#profil {
+  width: 70%;
+  margin: auto;
+}
+
+div#services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div {
+    flex: 1;
+    margin: 0 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: lighten($dark-color-main, 95);
+    box-shadow: $shadow-bottom;
+    img {
+      width: 128px;
+      margin: 35px;
+    }
+  }
+}
+
+div#profil {
+
+}
