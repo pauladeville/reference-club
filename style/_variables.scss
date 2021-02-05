@@ -1,7 +1,7 @@
 // COULEURS
 $accent-color-main: #FF4338;
-$accent-color-complement: #05CE7C;
-$dark-color-main: #000;
+$accent-color-complement: #06A77D;
+$dark-color-main: #1E1E24;
 $light-color-main: #fff;
 
 //MEDIA QUERY
@@ -20,4 +20,7 @@ $breakpoints: (medium: 900px, small: 500px);
 }
 
 // OMBRE BOTTOM
-$shadow-bottom: 0 25px 25px -25px lighten($dark-color-main, 20);
+$shadow: 0px 0px 24px 2px rgba(0,0,0,0.2);
+
+// BORDER RADIUS
+$radius: 5px;

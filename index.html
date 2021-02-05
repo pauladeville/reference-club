@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REFERENCE CLUB</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> </head>
 <body>
     <div id="main-wrapper">
         <header>
@@ -12,8 +14,8 @@
                 <img class="logo-pulse" id="main-logo" src="images/logo-white.jpg" alt="logo de reference club">
             </a>
             <nav id="desktop-nav">
-                <a href="#services" class="link-underline">Services</a>
-                <a href="edito.html" class="link-underline">Conseils</a>
+                <a href="#services" class="link-underline">Services proposés</a>
+                <a href="edito.html" class="link-underline">Conseils gratuits</a>
                 <a href="#contact" class="link-underline">Contact</a>
             </nav>
             <button class="hamburger">
@@ -22,8 +24,8 @@
 
             
             <nav id="mobile-nav">
-                <a href="#services">Services</a>
-                <a href="edito.html">Conseils</a>
+                <a href="#services">Services proposés</a>
+                <a href="edito.html">Conseils gratuits</a>
                 <a href="#contact">Contact</a>
             </nav>
 
@@ -31,7 +33,7 @@
 
         <div id="main-title">
             <h1>Création de sites<br>et de portfolios<br>conçus pour le référencement</h1>
-            <a href="contact"><span>Faites-vous entendre !</span></a>
+            <a href="#services"><span>Faites-vous entendre !</span></a>
         </div>
 
         <div class="flip-card">
@@ -45,7 +47,15 @@
                     </div>
                 </div>
                 <div class="flip-card-back">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut imperdiet lorem, non placerat risus. Nulla rhoncus ultricies eros non mollis. Cras ornare pulvinar consequat. Pellentesque ornare sed mauris eu tempor.</p>
+                    <p>Je suis une équipe à moi toute seule : j'écoute, je conseille, j'explique, je code, je rédige, je fais moi-même le café.</p>
+                    <p>Il m'arrive aussi de travailler avec des graphistes ou d'autres développeurs sur des projets de grande ampleur.</p>
+                    <!-- <p>Je travaille depuis 10 ans dans les métiers du web, côté conseil et aussi production.</p>
+                    <p>J'accompagne aujourd'hui des projets de l'Economie Sociale et Solidaire et des artisans dans leur .</p>
+                        
+                        Mon obsession : rendre les sites les plus légers possible, pour qu'ils soient plus efficaces, plus accessibles, mieux référencés, moins polluants, et plus résistantes dans le temps.
+                        
+                        Je suis disponible pour de nouvelles missions dans la Région de Nantes ou en télétravail partout dans le monde.
+                        </p> -->
                 </div>
             </div>
         </div>
@@ -55,22 +65,92 @@
         <img id="wave-top" src="images/waves.svg" alt="">
 
         <div id="services">
-            <div>
-                <img src="images/plus.png" alt="">
-                <h2>Création d'un site sur-mesure</h2>
-                <p>On part d'une page blanche. Je vous écoute, je vous conseille, vous choisissez le design que vous préférez. J'en profite pour optimiser votre site / portfolio pour qu'il soit le mieux référencé possible.</p>
+            <p class="services-title">2 moyens de faire connaître votre projet</p>
+            <div class="services-container">
+                <div class="services-column">
+                    <img src="images/create.png" alt="">
+                    <h2>Création d'un site sur-mesure</h2>
+                    <p>On part d'une page blanche. Je vous écoute, je vous conseille, vous choisissez le design que vous préférez. J'en profite pour optimiser votre site / portfolio pour qu'il soit le mieux référencé possible.</p>
+                </div>
+                <div class="services-column">
+                    <img src="images/optimize.png" alt="">
+                    <h2>Optimisation d'un site existant</h2>
+                    <p>Votre portefolio est fatigué ? Vous rencontrez trop de problèmes techniques avec votre site ? Vos visiteurs se vont rares ? Dites-moi ce qui vous embête ou laissez-moi devinez. Nous travaillerons ensemble à la façon dont vous vous présentez sur internet.</p>
+                </div>
             </div>
-            <div>
-                <img src="images/settings.png" alt="">
-                <h2>Optimisation d'un site existant</h2>
-                <p>Votre portefolio est fatigué ? Vous rencontrez trop de problèmes techniques avec votre site ? Vos visiteurs se vont rares ? Dites-moi ce qui vous embête ou laissez-moi devinez. Nous travaillerons ensemble à la façon dont vous vous présentez sur internet.</p>
-            </div>
-
         </div>
         <img id="wave-bottom" src="images/waves2.svg" alt="">
 
+        <div id="quote">
+            <h3>Prenez la parole, défendez vos projets, partagez votre talent.</h3>
+            <div class="card">
+                <img src="images/light-bulb.png" alt="">
+                <p>REFERENCE CLUB soutient les associations<br>et leur propose un tarif réduit.</p>
+            </div>
+        </div>
+
         <div id="contact">
-            <p>ici le formulaire de contact</p>
+            <div id="contact-img">
+            </div>
+            <div id="contact-text">
+                <form action="mail.php" method="post">
+                    <div class="form-group field">
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="form-field"
+                            required
+                            placeholder="Prénom Nom">
+                        <label
+                            for="name"
+                            class="form-label"
+                            >Votre nom
+                        </label>
+
+                    </div>
+                    <div class="form-group field">
+                        <input
+                            type="email"
+                            name="mail"
+                            id="mail"
+                            class="form-field"
+                            required
+                            placeholder="email@exemple.com">
+                        <label
+                            for="mail"
+                            class="form-label"
+                            >Votre adresse mail
+                        </label>
+
+                    </div>
+                    <div>
+                        <label
+                            for="message"
+                            class="textarea-label"
+                            >Votre message
+                        </label>
+                        <textarea
+                            name="message"
+                            id="message"
+                            cols="50"
+                            rows="10"
+                            class="textarea-field"
+                            required
+                            placeholder="Un projet, une question, je vous écoute."></textarea>
+                    </div>
+                    <input type="submit" value="Envoyer">
+                </form>
+
+                <div id="social-container">
+                    <p>Restons en contact</p>
+                    <div>
+                        <img src="images/twitter.png" alt="">
+                        <img src="images/linkedin.png" alt="">
+                        <img src="images/github.png" alt="">    
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

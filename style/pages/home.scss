@@ -6,7 +6,7 @@
   margin-bottom: 100px;
   text-align: center;
   color: white;
-  box-shadow: $shadow-bottom;
+  box-shadow: $shadow;
   h1 {
     width: 80%;
     margin: auto;
@@ -23,12 +23,11 @@
     position: relative;
     overflow: hidden;
     background-color: $light-color-main;
-    border-radius: 10px;
-    box-shadow: $shadow-bottom;
+    border-radius: $radius;
+    box-shadow: $shadow;
     padding: 15px 30px;
     color: $dark-color-main;
     margin-top: 100px;
-    font-size: 1.5em;
     span {
       z-index: 3;
       position: relative;
@@ -43,7 +42,7 @@
       border-radius: 50%;
       transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
       transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
-      background-color: $accent-color-complement;
+      background-color: $accent-color-main;
       opacity: 0;
       z-index: 1;
     }
@@ -55,19 +54,15 @@
       transition-duration: .85s;
       transform: translate3d(-50%,-50%,0) scale3d(1,1,1)
     }
-    @include maxSize(map-get($breakpoints, small)) {
-      font-size: 1em;
-    }  
   }
 }
 
 
 .flip-card {
     width: 500px;
-    height: 250px;
+    height: 280px;
     margin: 150px auto;
     background-color: transparent;
-    border: 1px solid $light-color-main;
     perspective: 1000px;
     z-index: 3;
 }
@@ -76,7 +71,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.5s;
     transform-style: preserve-3d;
 }
 .flip-card:hover .flip-card-inner {
@@ -86,22 +81,26 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 30px;
+    padding: 30px 50px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 10px;
-    box-shadow: $shadow-bottom;
+    border-radius: $radius;
+    box-shadow: $shadow;
 }
 .flip-card-front {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: $accent-color-complement;
-    color: $light-color-main;
+    background-color: $light-color-main;
+    background-image: url(../../images/blob.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    color: $dark-color-main;
     img {
         border-radius: 500px;
         width: 180px;
+        margin-right: 10px;
     }
     p {
         text-align: center;
@@ -124,28 +123,204 @@
 }
 
 div#services {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   background-color: $accent-color-main;
-  padding: 0 80px;
-  div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .services-title {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: $light-color-main;
+    font-weight: bold;
+    margin-bottom: 80px;
+  }
+  .services-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 80px;
+    @include maxSize(map-get($breakpoints, medium)) {
+      flex-direction: column;
+    }
+  }
+  .services-column {
     flex: 1;
-    margin: 25px 25px;
+    margin: 30px 25px;
     padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     background-color: $light-color-main;
-    box-shadow: $shadow-bottom;
+    box-shadow: $shadow;
+    border-radius: $radius;
     img {
       width: 80px;
       margin: 35px;
     }
   }
+}
+
+#wave-top, #wave-bottom {
+  position: relative;
+  transform: scale(1.01);
+  left: 1px;
+}
+#wave-top {
+  bottom: -1px;
+}
+#wave-bottom {
+  top: -1px;
+}
+
+div#quote {
+  color: $light-color-main;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  h3 {
+    font-size: 1.8em;
+    margin-bottom: 150px;
+  }
+  .card {
+    width: 50%;
+    margin: auto;
+    background-color: $light-color-main;
+    color: $dark-color-main;
+    padding: 30px;
+    box-shadow: $shadow;
+    border-radius: $radius;
+  }
+  img {
+    margin: 30px ;
+  }
   @include maxSize(map-get($breakpoints, medium)) {
-      flex-direction: column;
+    width: 80%;
+  }
+}
+
+div#contact {
+  margin-top: 200px;
+  height: 800px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: $light-color-main;
+  box-shadow: $shadow;
+  &-img {
+    flex: 1;
+    background-image: url(../../images/angry-voice.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include maxSize(map-get($breakpoints, medium)) {
+      display: none;
+    }  
+  }
+  &-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    margin: 0 30px;
+    @include maxSize(map-get($breakpoints, medium)) {
+      padding: 30px;
+    }  
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  label {
+    display: block;
+  }
+  .form-group {
+    position: relative;
+    padding: 25px 0 0;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+  }
+  .form-field {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid darken($dark-color-main, 15);
+    outline: 0;
+    padding: 7px 0;
+    background: transparent;
+    font-weight: bold;
+    font-size: 1em;
+    transition: border-color 0.2s;
+    &::placeholder {
+      color: transparent;
+    }
+    &:placeholder-shown ~ .form-label {
+      cursor: text;
+      top: 30px;
+    }
+  }
+  .form-label {
+    position: absolute;
+    top: 0;
+    transition: 0.2s;
+    color: gray;
+  }
+  .form-field:focus {
+    &~ .form-label {
+      position: absolute;
+      top: 0;
+      transition: 0.2s;
+      color: $accent-color-complement;
+      font-weight: bold;
+    }
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $accent-color-complement, darken($accent-color-complement, 10));
+    border-image-slice: 1;
+  }
+  .form-field {
+    &:required, &:invalid {
+      box-shadow: none;
+    }
+  }
+  .textarea-label {
+    color: grey;
+    margin: 20px 0;
+  }
+  textarea {
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    background-color: lighten($dark-color-main, 80);
+  }
+  input[type="submit"] {
+    margin: 50px 0;
+    padding: 10px 15px;
+    border: 0;
+    width: 150px;
+    background-color: $accent-color-complement;
+    color: $light-color-main;
+    font-size: 1em;
+    border-radius: $radius;
+
+  }
+}
+
+div#social-container {
+  width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  @include maxSize(map-get($breakpoints, medium)) {
+    flex-direction: column;
+    align-items: center;
+  }
+  img {
+    margin: 0 15px;
   }
 }
