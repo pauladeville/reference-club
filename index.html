@@ -79,19 +79,25 @@
                 </div>
             </div>
         </div>
-        <img id="wave-bottom" src="images/waves2.svg" alt="">
+
+        <div id="clients">
+            <h2>Regardez ce beau travail déjà accompli dans la plus grande satisfaction des uns et des autres</h2>
+            <div id="clients-container">
+                <img src="https://thisartworkdoesnotexist.com/" alt="">
+                <img src="https://thisartworkdoesnotexist.com/" alt="">
+            </div>
+        </div>
 
         <div id="quote">
             <h3>Prenez la parole, défendez vos projets, partagez votre talent.</h3>
             <div class="card">
                 <img src="images/light-bulb.png" alt="">
-                <p>REFERENCE CLUB soutient les associations<br>et leur propose un tarif réduit.</p>
+                <p>REFERENCE CLUB soutient les <span class="bold-text">associations</span><br>et leur propose un tarif réduit.</p>
             </div>
         </div>
 
         <div id="contact">
-            <div id="contact-img">
-            </div>
+            <div id="contact-img"></div>
             <div id="contact-text">
                 <form action="mail.php" method="post">
                     <div class="form-group field">
@@ -124,12 +130,10 @@
                         </label>
 
                     </div>
-                    <div>
-                        <label
-                            for="message"
-                            class="textarea-label"
-                            >Votre message
-                        </label>
+                    <label
+                        for="message"
+                        class="textarea-label"
+                        >Votre message
                         <textarea
                             name="message"
                             id="message"
@@ -137,8 +141,10 @@
                             rows="10"
                             class="textarea-field"
                             required
-                            placeholder="Un projet, une question, je vous écoute."></textarea>
-                    </div>
+                            placeholder="Un projet, une question, je vous écoute.">
+                        </textarea>
+                    </label>
+
                     <input type="submit" value="Envoyer">
                 </form>
 
