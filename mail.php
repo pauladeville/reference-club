@@ -6,8 +6,8 @@
     $headers  = 'MIME-Version: 1.0' . "\n"; // Version MIME
     $headers .= 'Content-type: text/html; charset=ISO-8859-1'."\n"; // l'en-tete Content-type pour le format HTML
     $headers .= 'To: '.$destinataire."\n"; // Mail de reponse
-    $headers .= 'From: "Nom_de_destinataire"<'.$expediteur.'>'."\n"; // Expediteur
-     
+    $headers .= 'From: <'.$expediteur.'>'."\n"; // Expediteur
+    
     $message =  '<div style="width: 100%; text-align: center; font-weight: bold"> Message de '.$_POST['name'].' : <br>
                     '.$_POST['message'].'</div>';
      
@@ -19,5 +19,5 @@
     {
         echo '<script languag="javascript">alert("Votre message n\'a pas pu être envoyé");</script>';
     }
-    // header('Location: monformulaire.php');
+    header('Location: https://pauladeville.github.io/reference-club/index.html#contact.php');
 ?>
