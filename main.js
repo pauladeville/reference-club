@@ -5,4 +5,8 @@ window.onload = () => {
         hamburger.classList.toggle('is-active');
         mobile_nav.classList.toggle('is-active');
     })
+    mobile_nav.addEventListener('click', () => {
+        hamburger.classList.toggle('is-active');
+        mobile_nav.classList.toggle('is-active');
+    })
 }

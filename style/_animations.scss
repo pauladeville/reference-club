@@ -1,8 +1,8 @@
 // PULSATION LOGO
 @keyframes pulse {
-    to {
-      box-shadow: 0 0 0 20px rgba(255, 67, 56, 0);
-    }
+  to {
+    box-shadow: 0 0 0 20px rgba(255, 67, 56, 0);
+  }
 }
 
 img.logo-pulse {
@@ -12,30 +12,30 @@ img.logo-pulse {
 }
 
 // OVERLINE ANIMÉ DES LIENS
-.link-animation {
+.link-overline {
   position: relative;
 }
 
-.link-animation span {
-    z-index: 1;
-    position: relative;
+.link-overline span {
+  z-index: 1;
+  position: relative;
 }
 
-.link-animation::after {
+.link-overline::after {
   content: "";
   position: absolute;
   left: -0.1px;
   right: -0.1px;
   bottom: 0;
   height: 100%;
-  transform: scaleY(.3);
-  transition: transform .3s cubic-bezier(0.53, 0.21, 0, 1);
+  transform: scaleY(0.3);
+  transition: transform 0.3s cubic-bezier(0.53, 0.21, 0, 1);
   transform-origin: bottom;
   background-color: $light-color-main;
   opacity: 0.5;
 }
 
-.link-animation:hover::after {
+.link-overline:hover::after {
   transform: scaleY(1);
 }
 
@@ -45,7 +45,7 @@ img.logo-pulse {
 }
 
 .link-underline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -62,3 +62,12 @@ img.logo-pulse {
   transform-origin: bottom left;
 }
 
+// WIGGLE
+@keyframes wiggle {
+  25% {
+    transform: translateX(2%);
+  }
+  75% {
+    transform: translateX(-2%);
+  }
+}

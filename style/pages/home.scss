@@ -122,6 +122,18 @@
   justify-content: center;
 }
 
+.flip-card ~ p {
+  color: $light-color-main;
+  text-align: center;
+  font-size: 1.5em;
+  width: 50%;
+  margin: auto;
+  font-weight: bold;
+  a {
+    color: $light-color-main
+  }
+}
+
 div#services {
   background-color: $accent-color-main;
   display: flex;
@@ -132,8 +144,7 @@ div#services {
   padding-bottom: 120px;
   box-shadow: $shadow;
   .services-title {
-    font-size: 1.5em;
-    text-transform: uppercase;
+    font-size: 1.8em;
     color: $light-color-main;
     font-weight: bold;
     margin-bottom: 80px;
@@ -161,6 +172,11 @@ div#services {
     img {
       width: 80px;
       margin: 35px;
+      transform: scale(1);
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover > img {
+      transform: scale(1.1);
     }
   }
 }
@@ -179,7 +195,8 @@ div#clients {
   padding-bottom: 150px;
   h2 {
     margin: 0;
-    padding: 100px 20%; 
+    padding: 100px 20%;
+    font-size: 1.8em;
   }
   &-container {
     width: 80%;
@@ -194,7 +211,7 @@ div#clients {
       &:nth-child(odd) {
         margin: 0 50px 0 0;
         @include maxSize(map-get($breakpoints, small)) {
-          margin: 0 0 50px  0;
+          margin: 0 0 50px 0;
         }
       }
     }
@@ -209,6 +226,9 @@ div#quote {
   h3 {
     font-size: 1.8em;
     margin: 150px 0;
+    a {
+      color: $light-color-main;
+    }
   }
   .card {
     width: 50%;
@@ -218,9 +238,12 @@ div#quote {
     padding: 30px;
     box-shadow: $shadow;
     border-radius: $radius;
-  }
-  img {
-    margin: 30px;
+    img {
+      margin: 30px;
+    }
+    &:hover > img {
+      animation: wiggle 150ms 2;
+    }
   }
   @include maxSize(map-get($breakpoints, medium)) {
     width: 80%;

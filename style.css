@@ -9,16 +9,16 @@ img.logo-pulse {
   animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 
-.link-animation {
+.link-overline {
   position: relative;
 }
 
-.link-animation span {
+.link-overline span {
   z-index: 1;
   position: relative;
 }
 
-.link-animation::after {
+.link-overline::after {
   content: "";
   position: absolute;
   left: -0.1px;
@@ -32,7 +32,7 @@ img.logo-pulse {
   opacity: 0.5;
 }
 
-.link-animation:hover::after {
+.link-overline:hover::after {
   transform: scaleY(1);
 }
 
@@ -58,6 +58,14 @@ img.logo-pulse {
   transform-origin: bottom left;
 }
 
+@keyframes wiggle {
+  25% {
+    transform: translateX(2%);
+  }
+  75% {
+    transform: translateX(-2%);
+  }
+}
 #main-title {
   height: 550px;
   background-image: url(../../images/boombox.jpg);
@@ -190,6 +198,18 @@ img.logo-pulse {
   justify-content: center;
 }
 
+.flip-card ~ p {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+  width: 50%;
+  margin: auto;
+  font-weight: bold;
+}
+.flip-card ~ p a {
+  color: #fff;
+}
+
 div#services {
   background-color: #FF4338;
   display: flex;
@@ -201,8 +221,7 @@ div#services {
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
 }
 div#services .services-title {
-  font-size: 1.5em;
-  text-transform: uppercase;
+  font-size: 1.8em;
   color: #fff;
   font-weight: bold;
   margin-bottom: 80px;
@@ -233,6 +252,11 @@ div#services .services-column {
 div#services .services-column img {
   width: 80px;
   margin: 35px;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+div#services .services-column:hover > img {
+  transform: scale(1.1);
 }
 
 #wave-top {
@@ -251,6 +275,7 @@ div#clients {
 div#clients h2 {
   margin: 0;
   padding: 100px 20%;
+  font-size: 1.8em;
 }
 div#clients-container {
   width: 80%;
@@ -283,6 +308,9 @@ div#quote h3 {
   font-size: 1.8em;
   margin: 150px 0;
 }
+div#quote h3 a {
+  color: #fff;
+}
 div#quote .card {
   width: 50%;
   margin: auto;
@@ -292,8 +320,11 @@ div#quote .card {
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
-div#quote img {
+div#quote .card img {
   margin: 30px;
+}
+div#quote .card:hover > img {
+  animation: wiggle 150ms 2;
 }
 @media screen and (max-width: 900px) {
   div#quote {
@@ -510,18 +541,9 @@ a {
   text-decoration: none;
 }
 
-.link-light {
-  color: #fff;
-}
-
 .bold-color-text {
   font-weight: bold;
   color: #06A77D;
-}
-
-em {
-  color: #06A77D;
-  font-style: normal;
 }
 
 nav {
@@ -584,10 +606,19 @@ nav#mobile-nav a {
   background-color: #fff;
   color: #FF4338;
   text-decoration: none;
+  font-weight: bold;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   transform: scale(1);
   transition: transform 300ms ease-in-out;
+}
+nav#mobile-nav a:first-child {
+  margin-top: 80px;
+}
+@media screen and (max-width: 500px) {
+  nav#mobile-nav a:first-child {
+    margin-top: 20px;
+  }
 }
 nav#mobile-nav a:hover {
   transform: scale(1.05);

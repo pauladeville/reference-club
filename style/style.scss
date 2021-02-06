@@ -35,18 +35,9 @@ a {
     text-decoration: none;
 }
 
-.link-light {
-    color: $light-color-main;
-}
-
 .bold-color-text {
     font-weight: bold;
     color: $accent-color-complement;
-}
-
-em {
-    color: $accent-color-complement;
-    font-style: normal;
 }
 
 nav {
@@ -105,10 +96,17 @@ nav {
             background-color: $light-color-main;
             color: $accent-color-main;
             text-decoration: none;
+            font-weight: bold;
             box-shadow: $shadow;
             border-radius: $radius;
             transform: scale(1);
             transition: transform 300ms ease-in-out;
+            &:first-child {
+                margin-top: 80px;
+                @include maxSize(map-get($breakpoints, small)) {
+                    margin-top: 20px;
+                }
+            }
             &:hover {
                 transform: scale(1.05);
             }    
