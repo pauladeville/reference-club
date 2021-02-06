@@ -1,22 +1,18 @@
-<?php 
-
-$msg = "Nom:\t$name\n";
-$msg .= "E-Mail:\t$mail\n";
-$msg .= "Message:\t$message\n\n";
-
-$recipient = "pauline.desmarets@posteo.net";
-$subject = "Nouveau message sur REFERENCE CLUB";
-
-$mailheaders = "From: Test<> \n";
-$mailheaders .= "Reply-To: $email\n\n";
-
-mail($recipient, $subject, $msg, $mailheaders);
-
-echo "<HTML><HEAD>";
-echo "<TITLE>Votre message a été envoyé !</TITLE></HEAD><BODY>";
-echo "<H1 align=center>Merci, $nom </H1>";
-echo "<P align=center>";
-echo "Je vous recontacte très vite. Bonne journée !</P>";
-echo "</BODY></HTML>";
-
+<?php
+        $header="MIME-Version: 1.0\r\n";
+        $header.='From:"Reference Club"<pauline@reference-club.fr>'."\n";
+        $header.='Content-Type:text/html; charset="uft-8"'."\n";
+        $header.='Content-Transfer-Encoding: 8bit';
+        $message='
+        <html>
+            <body>
+                <p>Nom :</p> '.$_POST['name'].'<br />
+                <p>Email :</p> '.$_POST['mail'].'<br />
+                <br />
+                '.nl2br($_POST['message']).'
+            </body>
+        </html>
+        ';
+        mail("pauline.desmarets@posteo.net", "Nouveau contact", $message, $header);
+        $msg="Votre message a bien été envoyé !";
 ?>
