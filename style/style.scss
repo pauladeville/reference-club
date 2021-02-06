@@ -35,8 +35,18 @@ a {
     text-decoration: none;
 }
 
-.bold-text {
+.link-light {
+    color: $light-color-main;
+}
+
+.bold-color-text {
     font-weight: bold;
+    color: $accent-color-complement;
+}
+
+em {
+    color: $accent-color-complement;
+    font-style: normal;
 }
 
 nav {
