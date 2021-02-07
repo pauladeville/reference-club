@@ -1,0 +1,100 @@
+#edito-container {
+    width: 80%;
+    margin: auto;
+}
+
+#edito-intro {
+    text-align: center;
+    h1 {
+        font-size: $quote-size;
+        padding: 250px 20px 40px 20px;
+        @include maxSize(map-get($breakpoints, medium)) {
+            padding-top: 200px;
+        }
+
+        @include maxSize(map-get($breakpoints, small)) {
+            padding-top: 150px;
+            font-size: $title-size;
+        }
+    }
+}
+
+#articles {
+    width: 90%;
+    margin: auto;
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: lighten($dark-color-main, 80);
+        margin-bottom: 50px;
+        border-radius: $radius;
+        ::after {
+            content: "";
+            background-color: $accent-color-main;
+        }
+        img {
+            width: 50%;
+            height: 100%;
+            z-index: 5;
+        }
+        div {
+            padding: 30px;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            h2 {
+                margin: 0;
+            }
+            .keywords {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0;
+            }
+        }
+        @include maxSize(map-get($breakpoints, medium)) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+    
+}
+
+#edito-footer {
+    background-color: $accent-color-main;
+    margin-top: 150px;
+    color: $light-color-main;
+    font-size: $emphasis-size;
+    font-weight: bold;
+    text-align: center;
+    padding: 2% 20%;
+    #social-container {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        width: 450px;
+    }
+    img {
+        filter: invert(1);
+    }
+    @include maxSize(map-get($breakpoints, medium)) {
+        padding: 30px;
+        #social-container {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+    @include maxSize(map-get($breakpoints, small)) {
+        font-size: $text-size;
+    }
+
+}
+

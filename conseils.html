@@ -4,15 +4,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REFERENCE CLUB</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> </head>
+    <link rel="icon" href="images/favicon.png">
+
 </head>
 <body>
-    <div id="border-left"></div>
-    <div id="border-right"></div>
-    <div id="border-top"></div>
-    <div id="border-bottom"></div>
-    <div id="main-wrapper">
-        <a href="index.html"><img id="logo-big" src="images/logo.png" alt=""></a>
-        <p class="construction">Un peu de patience, vous trouverez bientôt ici<br>tous les secrets d'une communication digitale efficace.</p>
-    </div>
+    <div id="edito-container">
+
+    <header>
+        <a href="index.html">
+            <img class="logo-pulse" id="main-logo" src="images/logo-white.jpg" alt="logo de reference club">
+        </a>
+        <nav id="desktop-nav">
+            <a href="index.html#services" class="link-underline">Services proposés</a>
+            <a href="conseils.html" class="link-underline">Conseils gratuits</a>
+            <a href="index.html#contact" class="link-underline">Contact</a>
+        </nav>
+        <button class="hamburger">
+            <div class="bar"></div>
+        </button>
+
+        <nav id="mobile-nav">
+            <a href="index.html#services">Services proposés</a>
+            <a href="conseils.html">Conseils gratuits</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="edito-intro">
+        <h1>Conseils pour optimiser la visibilité de votre site</h1>
+    </section>
+
+    <section id="articles">
+        <article class="overlayLeftBtn">
+            <img src="images/test.jpg" alt="">
+            <div>
+                <h2>Comment Google référence votre site web sérieusement c'est important que vous le lisiez tout de suite</h2>
+                <p>Description de l'article, pour donner envie de le lire</p>
+            </div>
+        </article>
+
+        <article class="overlayLeftBtn">
+            <img src="images/test.jpg" alt="">
+            <div>
+                <h2>Ici un article avec Vue js</h2>
+                <p>Description de l'article, pour donner envie de le lire</p>
+            </div>
+        </article>
+
+    </section>
+   
+</div>
+
+        <footer id="edito-footer">
+
+            <p>Vous ne savez pas par où commencer avec votre site vitrine ou votre portfolio ? <a href="index.html#contact" class="link-overline">Reference Club vous offre un audit SEO</a>.</p>
+            <div id="social-container">
+                <p>Restons en contact</p>
+                <div>
+                    <a href="https://twitter.com/REFERENCE_CLUB" target="_blank">
+                        <img src="images/twitter.png" alt="">
+                    </a>
+                    <a href="https://www.linkedin.com/in/paulinedesmarets/" target="_blank">
+                        <img src="images/linkedin.png" alt="">
+                    
+                    </a>
+                    <a href="https://github.com/pauladeville" target="_blank">
+                        <img src="images/github.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    
+    <script src="main.js"></script>
+
 </body>
 </html>

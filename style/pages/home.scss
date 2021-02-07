@@ -134,7 +134,7 @@ div#mobile-flip-card {
   }
 }
 
-div#services {
+#services {
   background-color: $accent-color-main;
   display: flex;
   flex-direction: column;
@@ -198,7 +198,7 @@ div#services {
   z-index: 5;
 }
 
-div#clients {
+#clients {
   background-color: $light-color-main;
   width: 100%;
   box-shadow: $shadow inset;
@@ -236,7 +236,7 @@ div#clients {
   }
 }
 
-div#quote {
+#quote {
   color: $light-color-main;
   text-align: center;
   width: 50%;
@@ -284,7 +284,7 @@ div#quote {
   }
 }
 
-div#contact {
+#contact {
   margin-top: 200px;
   height: 800px;
   display: flex;
