@@ -19,41 +19,16 @@
     }
   }
   a {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    background-color: $light-color-main;
-    border-radius: $radius;
-    box-shadow: $shadow;
-    padding: 15px 30px;
-    color: $dark-color-main;
     margin-top: 100px;
-    span {
-      z-index: 3;
-      position: relative;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
-      transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
-        transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-      background-color: $accent-color-main;
-      opacity: 0;
-      z-index: 1;
-    }
-    &:hover span {
-      color: $light-color-main;
-    }
-    &:hover::before {
-      opacity: 1;
-      transition-duration: 0.85s;
-      transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+    font-size: $emphasis-size;
+    @include ellipse-button(
+      $light-color-main,
+      $dark-color-main,
+      $accent-color-main,
+      $light-color-main
+    );
+    @include maxSize(map-get($breakpoints, small)) {
+      font-size: $text-size;
     }
   }
 }
@@ -65,6 +40,13 @@
   background-color: transparent;
   perspective: 1000px;
   z-index: 3;
+  @include maxSize(map-get($breakpoints, medium)) {
+    width: 350px;
+    height: 200px;
+  }
+  @include maxSize(map-get($breakpoints, small)) {
+    display: none;
+  }
 }
 .flip-card-inner {
   position: relative;
@@ -122,15 +104,33 @@
   justify-content: center;
 }
 
-.flip-card ~ p {
+.flip-card ~ p,
+div#mobile-flip-card {
   color: $light-color-main;
   text-align: center;
-  font-size: 1.5em;
+  font-size: $title-size;
   width: 50%;
-  margin: auto;
+  margin: 0 auto 50px auto;
   font-weight: bold;
   a {
-    color: $light-color-main
+    color: $light-color-main;
+  }
+  @include maxSize(map-get($breakpoints, medium)) {
+    font-size: $emphasis-size;
+    width: 80%;
+  }
+}
+
+div#mobile-flip-card {
+  img {
+    border-radius: 500px;
+    width: 180px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    box-shadow: $shadow;
+  }
+  @include minSize(map-get($breakpoints, small)) {
+    display: none;
   }
 }
 
@@ -144,10 +144,17 @@ div#services {
   padding-bottom: 120px;
   box-shadow: $shadow;
   .services-title {
-    font-size: 1.8em;
+    font-size: $quote-size;
     color: $light-color-main;
     font-weight: bold;
-    margin-bottom: 80px;
+    padding: 30px;
+    @include maxSize(map-get($breakpoints, medium)) {
+      font-size: $title-size;
+    }
+    @include maxSize(map-get($breakpoints, small)) {
+      font-size: $emphasis-size;
+      margin-bottom: 20px;
+    }
   }
   .services-container {
     display: flex;
@@ -156,6 +163,10 @@ div#services {
     padding: 0 80px;
     @include maxSize(map-get($breakpoints, medium)) {
       flex-direction: column;
+      padding: 0 50px;
+    }
+    @include maxSize(map-get($breakpoints, small)) {
+      padding: 0 20px;
     }
   }
   .services-column {
@@ -196,7 +207,14 @@ div#clients {
   h2 {
     margin: 0;
     padding: 100px 20%;
-    font-size: 1.8em;
+    font-size: $title-size;
+    @include maxSize(map-get($breakpoints, medium)) {
+      padding: 100px 40px 80px 40px;
+      font-size: $title-size;
+    }
+    @include maxSize(map-get($breakpoints, small)) {
+      font-size: $emphasis-size;
+    }
   }
   &-container {
     width: 80%;
@@ -224,7 +242,7 @@ div#quote {
   width: 50%;
   margin: auto;
   h3 {
-    font-size: 1.8em;
+    font-size: $quote-size;
     margin: 150px 0;
     a {
       color: $light-color-main;
@@ -247,6 +265,22 @@ div#quote {
   }
   @include maxSize(map-get($breakpoints, medium)) {
     width: 80%;
+    h3 {
+      font-size: $title-size;
+      margin: 80px 0;
+    }
+    .card {
+      padding: 15px;
+      width: 80%;
+    }
+  }
+  @include maxSize(map-get($breakpoints, medium)) {
+    .card {
+      width: 80%;
+    }
+    h3 {
+      font-size: $emphasis-size;
+    }
   }
 }
 
@@ -276,8 +310,11 @@ div#contact {
     align-items: center;
     @include maxSize(map-get($breakpoints, medium)) {
       margin: 0;
-      padding: 50px 5px;
+      padding: 50px 0;
     }
+  }
+  @include maxSize(map-get($breakpoints, small)) {
+    flex-direction: column;
   }
 }
 
@@ -290,7 +327,7 @@ form {
   }
   .form-group {
     position: relative;
-    padding: 25px 0 0;
+    padding: 20px 0 0;
     margin: 20px 0;
     width: 100%;
     max-width: 400px;
@@ -303,7 +340,6 @@ form {
     padding: 7px 0;
     background: transparent;
     font-weight: bold;
-    font-size: 1em;
     transition: border-color 0.2s;
     &::placeholder {
       color: transparent;
@@ -358,15 +394,23 @@ form {
     outline: 0;
     background-color: lighten($dark-color-main, 80);
   }
-  input[type="submit"] {
+  #send-form {
     margin: 50px 0;
-    padding: 10px 15px;
     border: 0;
-    width: 150px;
-    background-color: $accent-color-complement;
-    color: $light-color-main;
-    font-size: 1em;
-    border-radius: $radius;
+    font-size: $text-size;
+    @include ellipse-button(
+      $accent-color-complement,
+      $light-color-main,
+      $dark-color-main,
+      $light-color-main
+    );
+  }
+  @include maxSize(map-get($breakpoints, small)) {
+    width: 200px;
+    .textarea-label,
+    textarea {
+      width: 200px;
+    }
   }
 }
 

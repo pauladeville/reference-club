@@ -92,15 +92,17 @@ img.logo-pulse {
   }
 }
 #main-title a {
+  margin-top: 100px;
+  font-size: 1.3em;
   display: inline-block;
   position: relative;
+  min-width: 200px;
   overflow: hidden;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
   padding: 15px 30px;
   color: #1E1E24;
-  margin-top: 100px;
 }
 #main-title a span {
   z-index: 3;
@@ -128,6 +130,11 @@ img.logo-pulse {
   transition-duration: 0.85s;
   transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
 }
+@media screen and (max-width: 500px) {
+  #main-title a {
+    font-size: 1em;
+  }
+}
 
 .flip-card {
   width: 500px;
@@ -136,6 +143,17 @@ img.logo-pulse {
   background-color: transparent;
   perspective: 1000px;
   z-index: 3;
+}
+@media screen and (max-width: 900px) {
+  .flip-card {
+    width: 350px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .flip-card {
+    display: none;
+  }
 }
 
 .flip-card-inner {
@@ -198,16 +216,38 @@ img.logo-pulse {
   justify-content: center;
 }
 
-.flip-card ~ p {
+.flip-card ~ p,
+div#mobile-flip-card {
   color: #fff;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   width: 50%;
-  margin: auto;
+  margin: 0 auto 50px auto;
   font-weight: bold;
 }
-.flip-card ~ p a {
+.flip-card ~ p a,
+div#mobile-flip-card a {
   color: #fff;
+}
+@media screen and (max-width: 900px) {
+  .flip-card ~ p,
+div#mobile-flip-card {
+    font-size: 1.3em;
+    width: 80%;
+  }
+}
+
+div#mobile-flip-card img {
+  border-radius: 500px;
+  width: 180px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+  box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 500px) {
+  div#mobile-flip-card {
+    display: none;
+  }
 }
 
 div#services {
@@ -221,10 +261,21 @@ div#services {
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
 }
 div#services .services-title {
-  font-size: 1.8em;
+  font-size: 2.5em;
   color: #fff;
   font-weight: bold;
-  margin-bottom: 80px;
+  padding: 30px;
+}
+@media screen and (max-width: 900px) {
+  div#services .services-title {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 500px) {
+  div#services .services-title {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
 }
 div#services .services-container {
   display: flex;
@@ -235,6 +286,12 @@ div#services .services-container {
 @media screen and (max-width: 900px) {
   div#services .services-container {
     flex-direction: column;
+    padding: 0 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  div#services .services-container {
+    padding: 0 20px;
   }
 }
 div#services .services-column {
@@ -275,7 +332,18 @@ div#clients {
 div#clients h2 {
   margin: 0;
   padding: 100px 20%;
-  font-size: 1.8em;
+  font-size: 2em;
+}
+@media screen and (max-width: 900px) {
+  div#clients h2 {
+    padding: 100px 40px 80px 40px;
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 500px) {
+  div#clients h2 {
+    font-size: 1.3em;
+  }
 }
 div#clients-container {
   width: 80%;
@@ -305,7 +373,7 @@ div#quote {
   margin: auto;
 }
 div#quote h3 {
-  font-size: 1.8em;
+  font-size: 2.5em;
   margin: 150px 0;
 }
 div#quote h3 a {
@@ -329,6 +397,22 @@ div#quote .card:hover > img {
 @media screen and (max-width: 900px) {
   div#quote {
     width: 80%;
+  }
+  div#quote h3 {
+    font-size: 2em;
+    margin: 80px 0;
+  }
+  div#quote .card {
+    padding: 15px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 900px) {
+  div#quote .card {
+    width: 80%;
+  }
+  div#quote h3 {
+    font-size: 1.3em;
   }
 }
 
@@ -363,7 +447,12 @@ div#contact-text {
 @media screen and (max-width: 900px) {
   div#contact-text {
     margin: 0;
-    padding: 50px 5px;
+    padding: 50px 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  div#contact {
+    flex-direction: column;
   }
 }
 
@@ -377,7 +466,7 @@ form label {
 }
 form .form-group {
   position: relative;
-  padding: 25px 0 0;
+  padding: 20px 0 0;
   margin: 20px 0;
   width: 100%;
   max-width: 400px;
@@ -390,7 +479,6 @@ form .form-field {
   padding: 7px 0;
   background: transparent;
   font-weight: bold;
-  font-size: 1em;
   transition: border-color 0.2s;
 }
 form .form-field::placeholder {
@@ -438,15 +526,54 @@ form .textarea-field {
   outline: 0;
   background-color: #ebebef;
 }
-form input[type=submit] {
+form #send-form {
   margin: 50px 0;
-  padding: 10px 15px;
   border: 0;
-  width: 150px;
-  background-color: #06A77D;
-  color: #fff;
   font-size: 1em;
+  display: inline-block;
+  position: relative;
+  min-width: 200px;
+  overflow: hidden;
+  background-color: #06A77D;
   border-radius: 5px;
+  box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
+  padding: 15px 30px;
+  color: #fff;
+}
+form #send-form span {
+  z-index: 3;
+  position: relative;
+}
+form #send-form::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  background-color: #1E1E24;
+  opacity: 0;
+  z-index: 1;
+}
+form #send-form:hover span {
+  color: #fff;
+}
+form #send-form:hover::before {
+  opacity: 1;
+  transition-duration: 0.85s;
+  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+}
+@media screen and (max-width: 500px) {
+  form {
+    width: 200px;
+  }
+  form .textarea-label,
+form textarea {
+    width: 200px;
+  }
 }
 
 div#social-container {
@@ -518,21 +645,16 @@ p.construction {
 body {
   margin: 0;
   padding: 0;
+}
+
+#main-wrapper {
+  width: 100%;
   background-color: #ff4338;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3CradialGradient id='a' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='%238a241e'/%3E%3Cstop offset='1' stop-color='%23ff4338'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='750' x2='1550' y2='750'%3E%3Cstop offset='0' stop-color='%23c5342b'/%3E%3Cstop offset='1' stop-color='%23ff4338'/%3E%3C/linearGradient%3E%3Cpath id='s' fill='url(%23b)' d='M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z'/%3E%3Cg id='g'%3E%3Cuse href='%23s' transform='scale(0.12) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.2) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.25) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(0.3) rotate(-20)'/%3E%3Cuse href='%23s' transform='scale(0.4) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(0.5) rotate(20)'/%3E%3Cuse href='%23s' transform='scale(0.6) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.7) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.835) rotate(-40)'/%3E%3Cuse href='%23s' transform='scale(0.9) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(1.05) rotate(25)'/%3E%3Cuse href='%23s' transform='scale(1.2) rotate(8)'/%3E%3Cuse href='%23s' transform='scale(1.333) rotate(-60)'/%3E%3Cuse href='%23s' transform='scale(1.45) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(1.6) rotate(10)'/%3E%3C/g%3E%3C/defs%3E%3Cg %3E%3Cg transform=''%3E%3Ccircle fill='url(%23a)' r='3000'/%3E%3Cg opacity='0.5'%3E%3Ccircle fill='url(%23a)' r='2000'/%3E%3Ccircle fill='url(%23a)' r='1800'/%3E%3Ccircle fill='url(%23a)' r='1700'/%3E%3Ccircle fill='url(%23a)' r='1651'/%3E%3Ccircle fill='url(%23a)' r='1450'/%3E%3Ccircle fill='url(%23a)' r='1250'/%3E%3Ccircle fill='url(%23a)' r='1175'/%3E%3Ccircle fill='url(%23a)' r='900'/%3E%3Ccircle fill='url(%23a)' r='750'/%3E%3Ccircle fill='url(%23a)' r='500'/%3E%3Ccircle fill='url(%23a)' r='380'/%3E%3Ccircle fill='url(%23a)' r='250'/%3E%3C/g%3E%3Cg transform='rotate(-151.2 0 0)'%3E%3Cuse href='%23g' transform='rotate(10)'/%3E%3Cuse href='%23g' transform='rotate(120)'/%3E%3Cuse href='%23g' transform='rotate(240)'/%3E%3C/g%3E%3Ccircle fill-opacity='0' fill='url(%23a)' r='3000'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-size: 1.2em;
-}
-@media screen and (max-width: 900px) {
-  body {
-    font-size: 1em;
-  }
-}
-
-#main-wrapper {
-  width: 100%;
+  font-size: 1em;
   font-family: "Roboto";
   color: #1E1E24;
 }
