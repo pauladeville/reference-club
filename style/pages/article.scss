@@ -1,0 +1,36 @@
+#article-container {
+    width: 75%;
+    margin: auto;
+    padding-bottom: 80px;
+    @include maxSize(map-get($breakpoints, medium)) {
+        width: 85%;
+    }
+}
+
+#article-footer {
+    width: 100%;
+    margin: 0;
+}
+
+img.article-img {
+    width: 100%;
+    filter: brightness(50%);
+    box-shadow: $shadow;
+}
+
+div.article-title {
+    width: 80%;
+    margin: auto;
+    color: $light-color-main;
+    text-align: center;
+    position: relative;
+    top: -300px;
+    h1 {
+        font-size: $quote-size;
+        margin-bottom: 50px;
+    }
+    h2 {
+        font-size: $title-size;
+    }
+   
+}

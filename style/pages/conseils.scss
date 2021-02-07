@@ -1,100 +1,108 @@
 #edito-container {
-    width: 80%;
-    margin: auto;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    $light-color-main 0%,
+    lighten($dark-color-main, 80) 100%
+  );
 }
 
 #edito-intro {
-    text-align: center;
-    h1 {
-        font-size: $quote-size;
-        padding: 250px 20px 40px 20px;
-        @include maxSize(map-get($breakpoints, medium)) {
-            padding-top: 200px;
-        }
-
-        @include maxSize(map-get($breakpoints, small)) {
-            padding-top: 150px;
-            font-size: $title-size;
-        }
+  text-align: center;
+  h1 {
+    font-size: $quote-size;
+    padding: 250px 20px 0 20px;
+    @include maxSize(map-get($breakpoints, medium)) {
+      padding-top: 200px;
     }
+
+    @include maxSize(map-get($breakpoints, small)) {
+      padding-top: 150px;
+      font-size: $title-size;
+    }
+  }
 }
 
 #articles {
-    width: 90%;
-    margin: auto;
-    article {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        background-color: lighten($dark-color-main, 80);
-        margin-bottom: 50px;
-        border-radius: $radius;
-        ::after {
-            content: "";
-            background-color: $accent-color-main;
-        }
-        img {
-            width: 50%;
-            height: 100%;
-            z-index: 5;
-        }
-        div {
-            padding: 30px;
-            display: flex;
-            height: 100%;
-            flex-direction: column;
-            justify-content: space-between;
-            h2 {
-                margin: 0;
-            }
-            .keywords {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 0;
-            }
-        }
-        @include maxSize(map-get($breakpoints, medium)) {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            img {
-                width: 100%;
-            }
-        }
-
+  width: 85%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px;
+  article {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: $light-color-main;
+    margin-bottom: 50px;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    cursor: pointer;
+    ::after {
+      content: "";
+      background-color: $accent-color-main;
     }
-    
+    img {
+      width: 50%;
+      height: 100%;
+      z-index: 5;
+    }
+    div {
+      padding: 30px;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        margin: 0;
+      }
+    }
+ }
+  @include maxSize(map-get($breakpoints, medium)) {
+    width: 80%;
+    article {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        img {
+          width: 100%;
+        }
+        div h2 {
+            font-size: $emphasis-size;
+        }
+    }
+  }
+  @include maxSize(map-get($breakpoints, small)) {
+    width: 60%;
+  }
+
 }
 
 #edito-footer {
-    background-color: $accent-color-main;
-    margin-top: 150px;
-    color: $light-color-main;
-    font-size: $emphasis-size;
-    font-weight: bold;
-    text-align: center;
-    padding: 2% 20%;
+  background-color: $accent-color-main;
+  color: $light-color-main;
+  font-size: $emphasis-size;
+  font-weight: bold;
+  text-align: center;
+  padding: 2% 20%;
+  box-shadow: $shadow;
+  #social-container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+  }
+  img {
+    filter: invert(1);
+  }
+  @include maxSize(map-get($breakpoints, medium)) {
+    padding: 30px;
     #social-container {
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        width: 450px;
+      flex-direction: column;
+      width: 100%;
     }
-    img {
-        filter: invert(1);
-    }
-    @include maxSize(map-get($breakpoints, medium)) {
-        padding: 30px;
-        #social-container {
-            flex-direction: column;
-            width: 100%;
-        }
-    }
-    @include maxSize(map-get($breakpoints, small)) {
-        font-size: $text-size;
-    }
-
+  }
+  @include maxSize(map-get($breakpoints, small)) {
+    font-size: $text-size;
+  }
 }
-

@@ -398,6 +398,7 @@ form {
     margin: 50px 0;
     border: 0;
     font-size: $text-size;
+    cursor: pointer;
     @include ellipse-button(
       $accent-color-complement,
       $light-color-main,
