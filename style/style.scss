@@ -39,6 +39,11 @@ a {
     color: $accent-color-complement;
 }
 
+img.text-icon {
+    width: auto;
+    border-radius: 0;
+}
+
 nav {
     z-index: 8;
     text-transform: uppercase;

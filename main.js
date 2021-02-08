@@ -1,3 +1,5 @@
+import './rellax.min.js';
+
 window.onload = () => {
     const hamburger = document.querySelector('.hamburger');
     const mobile_nav = document.querySelector('#mobile-nav');
@@ -10,3 +12,5 @@ window.onload = () => {
         mobile_nav.classList.toggle('is-active');
     })
 }
+
+var rellax = new Rellax('.rellax');

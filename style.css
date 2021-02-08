@@ -360,47 +360,59 @@ div#mobile-flip-card img {
   z-index: 5;
 }
 
-#clients {
+#skills {
   background-color: #fff;
   width: 100%;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2) inset;
   text-align: center;
-  padding-bottom: 150px;
 }
-#clients h2 {
+#skills h2 {
   margin: 0;
-  padding: 100px 20%;
+  padding: 100px 10%;
   font-size: 2em;
 }
 @media screen and (max-width: 900px) {
-  #clients h2 {
+  #skills h2 {
     padding: 100px 40px 80px 40px;
     font-size: 2em;
   }
 }
 @media screen and (max-width: 500px) {
-  #clients h2 {
+  #skills h2 {
     font-size: 1.3em;
   }
 }
-#clients-container {
+#skills-container {
   width: 80%;
   margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  padding: 100px 0 200px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 80px;
 }
-#clients-container img {
-  width: 200px;
+#skills .skills-card {
+  background-color: #06A77D;
+  padding: 20px;
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
-#clients-container img:nth-child(odd) {
-  margin: 0 50px 0 0;
+#skills .skills-card:nth-child(odd) {
+  background-color: #1E1E24;
+}
+#skills .skills-card h3 {
+  font-size: 1.3em;
+}
+@media screen and (max-width: 900px) {
+  #skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 500px) {
-  #clients-container img:nth-child(odd) {
-    margin: 0 0 50px 0;
+  #skills-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -725,7 +737,7 @@ div#social-container img {
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
 }
 #edito-footer #social-container {
-  margin: auto;
+  margin: 50px auto auto auto;
   display: flex;
   flex-direction: row;
   width: 450px;
@@ -814,6 +826,11 @@ a :visited {
 .bold-color-text {
   font-weight: bold;
   color: #06A77D;
+}
+
+img.text-icon {
+  width: auto;
+  border-radius: 0;
 }
 
 nav {

@@ -198,15 +198,14 @@ div#mobile-flip-card {
   z-index: 5;
 }
 
-#clients {
+#skills {
   background-color: $light-color-main;
   width: 100%;
   box-shadow: $shadow inset;
   text-align: center;
-  padding-bottom: 150px;
   h2 {
     margin: 0;
-    padding: 100px 20%;
+    padding: 100px 10%;
     font-size: $title-size;
     @include maxSize(map-get($breakpoints, medium)) {
       padding: 100px 40px 80px 40px;
@@ -219,21 +218,39 @@ div#mobile-flip-card {
   &-container {
     width: 80%;
     margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    img {
-      width: 200px;
-      &:nth-child(odd) {
-        margin: 0 50px 0 0;
-        @include maxSize(map-get($breakpoints, small)) {
-          margin: 0 0 50px 0;
-        }
-      }
+    padding: 100px 0 200px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 80px;
+  }
+  .skills-card {
+    background-color: $accent-color-complement;
+    padding: 20px;
+    height: 250px;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    color: $light-color-main;
+    &:nth-child(odd) {
+      background-color: $dark-color-main;
+    }
+    h3 {
+      font-size: $emphasis-size;
     }
   }
+  @include maxSize(map-get($breakpoints, medium)) {
+    &-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .skills-card {
+    }
+  }
+  @include maxSize(map-get($breakpoints, small)) {
+    &-container {
+    grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
 }
 
 #quote {
