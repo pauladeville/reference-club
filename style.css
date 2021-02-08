@@ -345,11 +345,19 @@ div#mobile-flip-card img {
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
-#services .services-column img {
+#services .services-column #circle1 {
   width: 80px;
-  margin: 35px;
-  transform: scale(1);
-  transition: all 0.2s ease-in-out;
+  height: 80px;
+  background-color: #06A77D;
+  border-radius: 50px;
+  margin: 20px 0;
+}
+#services .services-column #circle2 {
+  width: 40px;
+  height: 40px;
+  background-color: #06A77D;
+  border-radius: 50px;
+  margin: 20px 0;
 }
 #services .services-column:hover > img {
   transform: scale(1.1);
@@ -370,7 +378,7 @@ div#mobile-flip-card img {
 }
 #skills h2 {
   margin: 0;
-  padding: 200px 10%;
+  padding: 150px 10% 80px 10%;
   font-size: 2em;
 }
 @media screen and (max-width: 900px) {
@@ -387,38 +395,49 @@ div#mobile-flip-card img {
 #skills-container {
   width: 80%;
   margin: auto;
-  padding: 3% 0 20% 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 40px;
-  grid-row-gap: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 120px;
 }
 #skills .skills-card {
-  background-color: #06A77D;
-  padding: 4% 9%;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
-  color: #fff;
-}
-#skills .skills-card:nth-child(odd) {
-  background-color: #06A77D;
+  margin: 50px;
+  width: 200px;
+  color: #1E1E24;
 }
 #skills .skills-card h3 {
   font-size: 1.3em;
+  margin-bottom: 0;
+}
+#skills .skills-card p {
+  color: #7c7c92;
+}
+#skills .skills-card .icon-container {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 500px;
+  box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
 }
 @media screen and (max-width: 900px) {
   #skills h2 {
     padding-top: 150px;
   }
   #skills-container {
-    grid-template-columns: repeat(2, 1fr);
     padding: 10% 0 25% 0;
   }
 }
 @media screen and (max-width: 500px) {
   #skills-container {
-    grid-template-columns: repeat(1, 1fr);
     padding: 15% 0 30% 0;
   }
 }
@@ -657,20 +676,20 @@ div#social-container img {
   background: radial-gradient(circle, #fff 0%, #ebebef 100%);
 }
 
-#edito-intro {
-  text-align: center;
-}
-#edito-intro h1 {
+h1#edito-title-main {
+  display: block;
+  color: #1E1E24;
   font-size: 2.5em;
+  text-align: center;
   padding: 250px 20px 0 20px;
 }
 @media screen and (max-width: 900px) {
-  #edito-intro h1 {
+  h1#edito-title-main {
     padding-top: 200px;
   }
 }
 @media screen and (max-width: 500px) {
-  #edito-intro h1 {
+  h1#edito-title-main {
     padding-top: 150px;
     font-size: 2em;
   }
@@ -680,7 +699,7 @@ div#social-container img {
   width: 85%;
   max-width: 1000px;
   margin: auto;
-  padding: 50px 50px 150px 50px;
+  padding: 50px 0 150px 0;
 }
 #articles article {
   display: flex;
@@ -708,9 +727,10 @@ div#social-container img {
   height: 100%;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 #articles article div h2 {
-  margin: 0;
+  margin: 0 0 20px 0;
 }
 @media screen and (max-width: 900px) {
   #articles {
@@ -774,9 +794,10 @@ div.article-img-main {
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: center;
 }
 
-h1 {
+h1.article-title {
   width: 40%;
   margin: auto;
   color: #fff;
@@ -786,13 +807,13 @@ h1 {
   font-size: 2.5em;
 }
 @media screen and (max-width: 900px) {
-  h1 {
+  h1.article-title {
     top: -280px;
     font-size: 2em;
   }
 }
 @media screen and (max-width: 500px) {
-  h1 {
+  h1.article-title {
     top: -300px;
     font-size: 2em;
     width: 80%;

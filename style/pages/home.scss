@@ -180,11 +180,21 @@ div#mobile-flip-card {
     background-color: $light-color-main;
     box-shadow: $shadow;
     border-radius: $radius;
-    img {
+    #circle1 {
       width: 80px;
-      margin: 35px;
-      transform: scale(1);
-      transition: all 0.2s ease-in-out;
+      height: 80px;
+      background-color: $accent-color-complement;
+      border-radius: 50px;
+      margin: 20px 0;
+    }
+    #circle2 {
+      width: 40px;
+      height: 40px;
+      background-color: $accent-color-complement;
+      border-radius: 50px;
+      margin: 20px 0;
+
+
     }
     &:hover > img {
       transform: scale(1.1);
@@ -206,7 +216,7 @@ div#mobile-flip-card {
   text-align: center;
   h2 {
     margin: 0;
-    padding: 200px 10%;
+    padding: 150px 10% 80px 10%;
     font-size: $title-size;
     @include maxSize(map-get($breakpoints, medium)) {
       padding: 100px 40px 80px 40px;
@@ -219,24 +229,37 @@ div#mobile-flip-card {
   &-container {
     width: 80%;
     margin: auto;
-    padding: 3% 0 20% 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 40px;
-    grid-row-gap: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 120px;
   }
   .skills-card {
-    background-color: $accent-color-complement;
-    padding: 4% 9%;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-radius: $radius;
-    box-shadow: $shadow;
-    color: $light-color-main;
-    &:nth-child(odd) {
-      background-color: $accent-color-complement;
-    }
+    margin: 50px;
+    width: 200px;
+    color: $dark-color-main;
     h3 {
       font-size: $emphasis-size;
+      margin-bottom: 0;
+    }
+    p {
+      color: lighten($dark-color-main, 40);
+    }
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      background-color: $light-color-main;
+      padding: 50px;
+      border-radius: 500px;
+      box-shadow: $shadow;
+      margin-bottom: 15px;
     }
   }
   @include maxSize(map-get($breakpoints, medium)) {
@@ -244,13 +267,11 @@ div#mobile-flip-card {
       padding-top: 150px;
     }
     &-container {
-      grid-template-columns: repeat(2, 1fr);
       padding: 10% 0 25% 0;
     }
   }
   @include maxSize(map-get($breakpoints, small)) {
     &-container {
-    grid-template-columns: repeat(1, 1fr);
     padding: 15% 0 30% 0;
     }
   }

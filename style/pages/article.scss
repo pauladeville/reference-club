@@ -5,9 +5,10 @@ div.article-img-main {
   box-shadow: $shadow;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: center;
 }
 
-h1 {
+h1.article-title {
   width: 40%;
   margin: auto;
   color: $light-color-main;

@@ -7,10 +7,11 @@
   );
 }
 
-#edito-intro {
-  text-align: center;
-  h1 {
+h1#edito-title-main {
+    display: block;
+    color: $dark-color-main;
     font-size: $quote-size;
+    text-align: center;
     padding: 250px 20px 0 20px;
     @include maxSize(map-get($breakpoints, medium)) {
       padding-top: 200px;
@@ -20,14 +21,13 @@
       padding-top: 150px;
       font-size: $title-size;
     }
-  }
 }
 
 #articles {
   width: 85%;
   max-width: 1000px;
   margin: auto;
-  padding: 50px 50px 150px 50px;
+  padding: 50px 0 150px 0;
   article {
     display: flex;
     flex-direction: row;
@@ -53,8 +53,9 @@
       height: 100%;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       h2 {
-        margin: 0;
+        margin: 0 0 20px 0;
       }
     }
  }
