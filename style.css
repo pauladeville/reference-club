@@ -361,14 +361,15 @@ div#mobile-flip-card img {
 }
 
 #skills {
-  background-color: #fff;
+  background-color: #ebebef;
+  background: radial-gradient(circle, #fff 0%, #dddde3 100%);
   width: 100%;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2) inset;
   text-align: center;
 }
 #skills h2 {
   margin: 0;
-  padding: 100px 10%;
+  padding: 200px 10%;
   font-size: 2em;
 }
 @media screen and (max-width: 900px) {
@@ -385,48 +386,53 @@ div#mobile-flip-card img {
 #skills-container {
   width: 80%;
   margin: auto;
-  padding: 100px 0 200px 0;
+  padding: 3% 0 20% 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 80px;
+  grid-column-gap: 40px;
+  grid-row-gap: 100px;
 }
 #skills .skills-card {
   background-color: #06A77D;
-  padding: 20px;
-  height: 250px;
+  padding: 4% 9%;
+  height: auto;
   border-radius: 5px;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
   color: #fff;
 }
 #skills .skills-card:nth-child(odd) {
-  background-color: #1E1E24;
+  background-color: #06A77D;
 }
 #skills .skills-card h3 {
   font-size: 1.3em;
 }
 @media screen and (max-width: 900px) {
+  #skills h2 {
+    padding-top: 150px;
+  }
   #skills-container {
     grid-template-columns: repeat(2, 1fr);
+    padding: 10% 0 25% 0;
   }
 }
 @media screen and (max-width: 500px) {
   #skills-container {
     grid-template-columns: repeat(1, 1fr);
+    padding: 15% 0 30% 0;
   }
 }
 
 #quote {
   color: #fff;
   text-align: center;
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
-#quote h3 {
+#quote h2 {
   font-size: 2.5em;
   margin: 150px 0;
 }
-#quote h3 a {
+#quote h2 a {
   color: #fff;
 }
 #quote .card {
@@ -448,7 +454,7 @@ div#mobile-flip-card img {
   #quote {
     width: 80%;
   }
-  #quote h3 {
+  #quote h2 {
     font-size: 2em;
     margin: 80px 0;
   }
@@ -457,11 +463,11 @@ div#mobile-flip-card img {
     width: 80%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
   #quote .card {
     width: 80%;
   }
-  #quote h3 {
+  #quote h2 {
     font-size: 1.3em;
   }
 }
@@ -673,7 +679,7 @@ div#social-container img {
   width: 85%;
   max-width: 1000px;
   margin: auto;
-  padding: 50px;
+  padding: 50px 50px 150px 50px;
 }
 #articles article {
   display: flex;
@@ -824,8 +830,12 @@ a :visited {
 }
 
 .bold-color-text {
-  font-weight: bold;
+  font-weight: 900;
   color: #06A77D;
+}
+
+.bold-text {
+  font-weight: 900;
 }
 
 img.text-icon {

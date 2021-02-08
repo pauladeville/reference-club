@@ -199,13 +199,14 @@ div#mobile-flip-card {
 }
 
 #skills {
-  background-color: $light-color-main;
+  background-color: lighten($dark-color-main, 80);
+  background: radial-gradient(circle, $light-color-main 0%, lighten($dark-color-main, 75) 100%);
   width: 100%;
   box-shadow: $shadow inset;
   text-align: center;
   h2 {
     margin: 0;
-    padding: 100px 10%;
+    padding: 200px 10%;
     font-size: $title-size;
     @include maxSize(map-get($breakpoints, medium)) {
       padding: 100px 40px 80px 40px;
@@ -218,36 +219,39 @@ div#mobile-flip-card {
   &-container {
     width: 80%;
     margin: auto;
-    padding: 100px 0 200px 0;
+    padding: 3% 0 20% 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 80px;
+    grid-column-gap: 40px;
+    grid-row-gap: 100px;
   }
   .skills-card {
     background-color: $accent-color-complement;
-    padding: 20px;
-    height: 250px;
+    padding: 4% 9%;
+    height: auto;
     border-radius: $radius;
     box-shadow: $shadow;
     color: $light-color-main;
     &:nth-child(odd) {
-      background-color: $dark-color-main;
+      background-color: $accent-color-complement;
     }
     h3 {
       font-size: $emphasis-size;
     }
   }
   @include maxSize(map-get($breakpoints, medium)) {
+    h2 {
+      padding-top: 150px;
+    }
     &-container {
       grid-template-columns: repeat(2, 1fr);
-    }
-    .skills-card {
+      padding: 10% 0 25% 0;
     }
   }
   @include maxSize(map-get($breakpoints, small)) {
     &-container {
     grid-template-columns: repeat(1, 1fr);
+    padding: 15% 0 30% 0;
     }
   }
 
@@ -256,9 +260,9 @@ div#mobile-flip-card {
 #quote {
   color: $light-color-main;
   text-align: center;
-  width: 50%;
+  width: 60%;
   margin: auto;
-  h3 {
+  h2 {
     font-size: $quote-size;
     margin: 150px 0;
     a {
@@ -282,7 +286,7 @@ div#mobile-flip-card {
   }
   @include maxSize(map-get($breakpoints, medium)) {
     width: 80%;
-    h3 {
+    h2 {
       font-size: $title-size;
       margin: 80px 0;
     }
@@ -291,11 +295,11 @@ div#mobile-flip-card {
       width: 80%;
     }
   }
-  @include maxSize(map-get($breakpoints, medium)) {
+  @include maxSize(map-get($breakpoints, small)) {
     .card {
       width: 80%;
     }
-    h3 {
+    h2 {
       font-size: $emphasis-size;
     }
   }

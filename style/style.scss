@@ -35,8 +35,12 @@ a {
 }
 
 .bold-color-text {
-    font-weight: bold;
+    font-weight: 900;
     color: $accent-color-complement;
+}
+
+.bold-text {
+    font-weight: 900;
 }
 
 img.text-icon {
