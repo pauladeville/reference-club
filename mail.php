@@ -1,6 +1,6 @@
 <?php
         $header="MIME-Version: 1.0\r\n";
-        $header.='From:"Reference Club"<pauline@reference-club.fr>'."\n";
+        $header.='From:"Reference Club"<pauline.desmarets@posteo.net>'."\n";
         $header.='Content-Type:text/html; charset="uft-8"'."\n";
         $header.='Content-Transfer-Encoding: 8bit';
         $message='

@@ -1,13 +1,8 @@
-// MAIN
 @import "variables";
 @import "animations";
-
-// PAGES
 @import "pages/home.scss";
 @import "pages/conseils.scss";
 @import "pages/article.scss";
-
-// -------------------------------------
 
 body {
     margin: 0;

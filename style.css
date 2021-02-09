@@ -365,7 +365,7 @@ div#mobile-flip-card img {
 
 #wave-top {
   position: relative;
-  bottom: -1px;
+  bottom: -5px;
   z-index: 5;
 }
 
