@@ -893,6 +893,11 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 500px) {
+  #main-wrapper {
+    overflow-x: hidden;
+  }
+}
 
 a {
   text-decoration: none;
@@ -1001,10 +1006,10 @@ nav#mobile-nav a:hover {
 
 .hamburger {
   position: fixed;
-  right: 15px;
-  top: 15px;
+  right: 22px;
+  top: 22px;
   display: block;
-  width: 50px;
+  width: 40px;
   height: 50px;
   cursor: pointer;
   appearance: none;

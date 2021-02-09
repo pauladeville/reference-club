@@ -24,6 +24,9 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    @include maxSize(map-get($breakpoints, small)) {
+        overflow-x: hidden;
+    }
 }
 
 a {
@@ -127,10 +130,10 @@ nav {
 
 .hamburger {
     position: fixed;
-    right: 15px;
-    top: 15px;
+    right: 22px;
+    top: 22px;
     display: block;
-    width: 50px;
+    width: 40px;
     height: 50px;
     cursor: pointer;
     appearance: none;
