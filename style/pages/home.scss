@@ -193,8 +193,6 @@ div#mobile-flip-card {
       background-color: $accent-color-complement;
       border-radius: 50px;
       margin: 20px 0;
-
-
     }
     &:hover > img {
       transform: scale(1.1);
@@ -204,13 +202,17 @@ div#mobile-flip-card {
 
 #wave-top {
   position: relative;
-  bottom: -5px;
+  bottom: -9px;
   z-index: 5;
 }
 
 #skills {
   background-color: lighten($dark-color-main, 80);
-  background: radial-gradient(circle, $light-color-main 0%, lighten($dark-color-main, 75) 100%);
+  background: radial-gradient(
+    circle,
+    $light-color-main 0%,
+    lighten($dark-color-main, 75) 100%
+  );
   width: 100%;
   box-shadow: $shadow inset;
   text-align: center;
@@ -274,7 +276,7 @@ div#mobile-flip-card {
   }
   @include maxSize(map-get($breakpoints, small)) {
     &-container {
-    padding: 10% 0 30% 0;
+      padding: 10% 0 30% 0;
     }
     .skills-card {
       margin: 30px 0;
@@ -288,7 +290,6 @@ div#mobile-flip-card {
       }
     }
   }
-
 }
 
 #quote {
