@@ -227,7 +227,7 @@ div#mobile-flip-card {
     }
   }
   &-container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -253,13 +253,15 @@ div#mobile-flip-card {
       color: lighten($dark-color-main, 40);
     }
     .icon-container {
-      width: 60px;
-      height: 60px;
+      width: 120px;
+      height: 120px;
       background-color: $light-color-main;
-      padding: 50px;
       border-radius: 500px;
       box-shadow: $shadow;
       margin-bottom: 15px;
+      img {
+        margin-top: 25px;
+      }
     }
   }
   @include maxSize(map-get($breakpoints, medium)) {
@@ -267,12 +269,23 @@ div#mobile-flip-card {
       padding-top: 150px;
     }
     &-container {
-      padding: 10% 0 25% 0;
+      padding: 5% 0 20% 0;
     }
   }
   @include maxSize(map-get($breakpoints, small)) {
     &-container {
-    padding: 15% 0 30% 0;
+    padding: 10% 0 30% 0;
+    }
+    .skills-card {
+      margin: 30px 0;
+      .icon-container {
+        width: 80px;
+        height: 80px;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
     }
   }
 
