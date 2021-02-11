@@ -666,6 +666,19 @@ form textarea {
   }
 }
 
+p.statusMsg {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+p.succdiv {
+  color: #06A77D;
+}
+
+p.errordiv {
+  color: #FF4338;
+}
+
 div#social-container {
   width: 450px;
   display: flex;

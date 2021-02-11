@@ -93,7 +93,7 @@
         </section>
 
         <section id="skills">
-            <h2>REFERENCE CLUB vous accompagne et vous conseille<br>pour développer votre activité sur internet.</h2>
+            <h2>Une vision globale pour ne pas multiplier les prestataires</h2>
             <div id="skills-container">
                 <div class="skills-card">
                     <div class="icon-container">
@@ -144,7 +144,12 @@
         <footer id="contact">
             <div id="contact-img"></div>
             <div id="contact-text">
-                <form action="mail.php" method="post">
+
+                <?php if(!empty($statusMsg)){ ?>
+                    <p class="statusMsg <?php echo !empty($msgClass)?$msgClass:''; ?>"><?php echo $statusMsg; ?></p>
+                <?php } ?>
+
+                <form action="" method="post" onsubmit="alert('Merci, vous recevrez une réponse sous 24h.')">
                     <div class="form-group field">
                         <input
                             type="text"

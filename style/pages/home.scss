@@ -471,6 +471,17 @@ form {
   }
 }
 
+p.statusMsg {
+  text-align: center;
+  font-size: $emphasis-size;
+}
+p.succdiv {
+  color: $accent-color-complement;
+}
+p.errordiv{
+  color:$accent-color-main;
+}
+
 div#social-container {
   width: 450px;
   display: flex;
