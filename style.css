@@ -106,10 +106,10 @@ img.logo-pulse {
 }
 
 #main-title {
-  height: 550px;
+  height: 700px;
   background-image: url(../../images/boombox.jpg);
   background-repeat: no-repeat;
-  padding-top: 250px;
+  padding-top: 350px;
   margin-bottom: 100px;
   text-align: center;
   color: white;
@@ -178,7 +178,7 @@ img.logo-pulse {
 .flip-card {
   width: 500px;
   height: 280px;
-  margin: 150px auto;
+  margin: 200px auto;
   background-color: transparent;
   perspective: 1000px;
   z-index: 3;
@@ -378,7 +378,7 @@ div#mobile-flip-card img {
 }
 #skills h2 {
   margin: 0;
-  padding: 150px 10% 80px 10%;
+  padding: 200px 10% 80px 10%;
   font-size: 2em;
 }
 @media screen and (max-width: 900px) {
@@ -906,7 +906,7 @@ h1.article-title {
   text-align: center;
 }
 #merci-wrapper h1, #merci-wrapper h2 {
-  margin: 0 15%;
+  margin: 0 20%;
   padding-bottom: 10px;
   font-size: 2em;
 }
@@ -967,7 +967,7 @@ h1.article-title {
 }
 
 #return-buttons {
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1018,7 +1018,7 @@ h1.article-title {
 }
 @media screen and (max-width: 900px) {
   #return-buttons a {
-    margin: 20px 10%;
+    margin: 10px 10%;
     width: 260px;
   }
 }
