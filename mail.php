@@ -1,17 +1,23 @@
-<?php
-    $header="MIME-Version: 1.0\r\n";
-    $header.='From:"REFERENCE CLUB"<pauline@reference-club.fr>'."\n";
-    $header.='Content-Type:text/html; charset="uft-8"'."\n";
-    $header.='Content-Transfer-Encoding: 8bit';
-    $message='
-    <html>
-        <body>
-            <p>Nom :</p> '.$_POST['name'].'<br />
-            <p>Email :</p> '.$_POST['mail'].'<br />
-            <br />
-            '.nl2br($_POST['message']).'
-        </body>
-    </html>
-    ';
-    mail("pauline@reference-club.fr", "Nouveau contact", $message, $header);
-?>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulaire de contact</title>
+</head>
+
+<body>
+    <?php
+
+        $message = '
+            Nom : ' . $_POST['name'] . '
+            Email : ' . $_POST['mail'] . '
+            Message : ' . $_POST['message'] . '
+        ';
+
+        $retour = mail('pauline@reference-club.fr', 'Nouveau contact', $message, 'From : pauline@reference-club.fr');
+        if ($retour) {
+            header('Location: merci.html');
+        }
+    ?>
+</body>
+</html>

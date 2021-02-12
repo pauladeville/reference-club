@@ -3,6 +3,7 @@
 @import "pages/home.scss";
 @import "pages/conseils.scss";
 @import "pages/article.scss";
+@import "pages/merci.scss";
 
 body {
     margin: 0;
@@ -39,6 +40,10 @@ a {
 
 .bold-text {
     font-weight: 900;
+}
+
+.light-text {
+    color: $light-color-main;
 }
 
 img.text-icon {
