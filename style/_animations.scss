@@ -134,7 +134,7 @@ img.logo-pulse {
   height: 100%;
   background-color: $accent-color-complement;
   transition: transform 0.4s cubic-bezier(.23,.94,.77,.97);
-  @include maxSize(map-get($breakpoints, medium)) {
+  @include maxSize(map-get($breakpoints, large)) {
     transform: translateY(-150%);
   }
 }

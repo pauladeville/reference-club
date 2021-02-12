@@ -5,7 +5,7 @@ $dark-color-main: #1E1E24;
 $light-color-main: #fff;
 
 //MEDIA QUERY
-$breakpoints: (medium: 900px, small: 500px);
+$breakpoints: (large: 1100px, medium: 900px, small: 500px);
 
 @mixin maxSize ($max-size) {
     @media screen and (max-width: $max-size) {

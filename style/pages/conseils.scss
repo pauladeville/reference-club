@@ -59,22 +59,22 @@ h1#edito-title-main {
       }
     }
  }
-  @include maxSize(map-get($breakpoints, medium)) {
-    width: 80%;
-    article {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        img {
-          width: 100%;
-        }
-        div h2 {
-            font-size: $emphasis-size;
-        }
-    }
+  @include maxSize(map-get($breakpoints, large)) {
+  width: 80%;
+  article {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+      div h2 {
+          font-size: $emphasis-size;
+      }
+  }
   }
   @include maxSize(map-get($breakpoints, small)) {
-    width: 60%;
+  width: 60%;
   }
 
 }

@@ -91,7 +91,7 @@ img.logo-pulse {
   background-color: #06A77D;
   transition: transform 0.4s cubic-bezier(0.23, 0.94, 0.77, 0.97);
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   .overlayLeftBtn::before {
     transform: translateY(-150%);
   }
@@ -758,7 +758,7 @@ h1#edito-title-main {
 #articles article div h2 {
   margin: 0 0 20px 0;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   #articles {
     width: 80%;
   }
