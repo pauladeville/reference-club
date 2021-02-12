@@ -907,10 +907,10 @@ h1.article-title {
 }
 #merci-wrapper h1, #merci-wrapper h2 {
   margin: 0 15%;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   font-size: 2em;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   #merci-wrapper h1, #merci-wrapper h2 {
     font-size: 1.3em;
   }
@@ -953,7 +953,12 @@ h1.article-title {
   filter: brightness(100);
   display: flex;
   margin: auto;
-  padding: 120px 0 80px;
+  padding: 100px 0 50px;
+}
+@media screen and (max-width: 900px) {
+  #big-white-logo {
+    width: 250px;
+  }
 }
 @media screen and (max-width: 500px) {
   #big-white-logo {
@@ -962,10 +967,18 @@ h1.article-title {
 }
 
 #return-buttons {
-  margin-top: 50px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  #return-buttons {
+    flex-direction: column;
+  }
 }
 #return-buttons a {
-  display: inline-block;
   margin: 35px;
   display: inline-block;
   position: relative;
@@ -1003,11 +1016,16 @@ h1.article-title {
   transition-duration: 0.85s;
   transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
 }
+@media screen and (max-width: 900px) {
+  #return-buttons a {
+    margin: 20px 10%;
+    width: 260px;
+  }
+}
 @media screen and (max-width: 500px) {
   #return-buttons a {
-    display: block;
-    margin: 20px 10%;
     min-width: 0;
+    width: auto;
   }
 }
 

@@ -14,11 +14,11 @@
     text-align: center;
     h1, h2 {
         margin: 0 15%;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         font-size: $title-size;
 
     }
-    @include maxSize(map-get($breakpoints, small)) {
+    @include maxSize(map-get($breakpoints, medium)) {
         h1, h2 {
             font-size: $emphasis-size;
         }
@@ -54,16 +54,25 @@
     filter: brightness(100);
     display: flex;
     margin: auto;
-    padding: 120px 0 80px;
+    padding: 100px 0 50px;
+    @include maxSize(map-get($breakpoints, medium)) {
+        width: 250px;
+    }
     @include maxSize(map-get($breakpoints, small)) {
         width: 180px;
     }
 }
 
 #return-buttons {
-    margin-top: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @include maxSize(map-get($breakpoints, medium)) {
+        flex-direction: column; 
+    }
     a {
-        display: inline-block;
         margin: 35px;
         @include ellipse-button(
             $light-color-main,
@@ -71,10 +80,13 @@
             $accent-color-complement,
             $light-color-main
           );
-        @include maxSize(map-get($breakpoints, small)) {
-            display: block;
+        @include maxSize(map-get($breakpoints, medium)) {
             margin: 20px 10%;
+            width: 260px;
+        }
+        @include maxSize(map-get($breakpoints, small)) {
             min-width: 0;
+            width: auto;
         }
     }
 }
