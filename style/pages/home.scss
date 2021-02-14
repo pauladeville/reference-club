@@ -172,7 +172,7 @@ div#mobile-flip-card {
   .services-column {
     flex: 1;
     margin: 30px 3%;
-    padding: 25px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -219,7 +219,7 @@ div#mobile-flip-card {
   h2 {
     margin: 0;
     padding: 200px 10% 80px 10%;
-    font-size: $title-size;
+    font-size: $quote-size;
     @include maxSize(map-get($breakpoints, medium)) {
       padding: 100px 40px 80px 40px;
       font-size: $title-size;
@@ -295,7 +295,7 @@ div#mobile-flip-card {
 #quote {
   color: $light-color-main;
   text-align: center;
-  width: 60%;
+  width: 70%;
   margin: auto;
   h2 {
     font-size: $quote-size;
@@ -338,6 +338,32 @@ div#mobile-flip-card {
       font-size: $emphasis-size;
     }
   }
+}
+
+.switch-text-container {
+  background-color: $light-color-main;
+  color: $dark-color-main;
+  border-radius: $radius;
+  font-size: $quote-size;
+  font-weight: bold;
+  height: 60px;
+  overflow: hidden;
+
+}
+.switch-text-list {
+  list-style-type: none;
+  transform: translateY(50px);
+  animation: switch-text 10s infinite;
+  margin: 0;
+}
+
+@keyframes switch-text {
+  0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+  16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+  33.32%,45.98% {transform:translate3d(0,-50%,0);}
+  49.98%,62.64% {transform:translate3d(0,-75%,0);}
+  66.64%,79.3% {transform:translate3d(0,-50%,0);}
+  83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
 
 #contact {
@@ -478,8 +504,8 @@ p.statusMsg {
 p.succdiv {
   color: $accent-color-complement;
 }
-p.errordiv{
-  color:$accent-color-main;
+p.errordiv {
+  color: $accent-color-main;
 }
 
 div#social-container {

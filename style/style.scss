@@ -25,6 +25,10 @@ body {
     }
 }
 
+p, em, li, h2, h3 {
+    line-height: 1.5em;
+}
+
 a {
     text-decoration: none;
     color: $light-color-main;
@@ -34,7 +38,7 @@ a {
 }
 
 .bold-color-text {
-    font-weight: 900;
+    font-weight: 700;
     color: $accent-color-complement;
 }
 
