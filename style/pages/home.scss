@@ -43,6 +43,9 @@
   @include maxSize(map-get($breakpoints, medium)) {
     width: 350px;
     height: 200px;
+    p {
+      line-height: 1.2em;
+    }
   }
   @include maxSize(map-get($breakpoints, small)) {
     display: none;
@@ -84,6 +87,9 @@
     border-radius: 500px;
     width: 180px;
     margin-right: 10px;
+    @include maxSize(map-get($breakpoints, medium)) {
+      width: 130px;
+    }
   }
   p {
     text-align: center;
@@ -207,7 +213,7 @@ div#mobile-flip-card {
 }
 
 #skills {
-  background-color: lighten($dark-color-main, 80);
+  background-color: lighten($dark-color-main, 90);
   background: radial-gradient(
     circle,
     $light-color-main 0%,
@@ -221,7 +227,7 @@ div#mobile-flip-card {
     padding: 200px 10% 80px 10%;
     font-size: $quote-size;
     @include maxSize(map-get($breakpoints, medium)) {
-      padding: 100px 40px 80px 40px;
+      padding-top: 100px;
       font-size: $title-size;
     }
     @include maxSize(map-get($breakpoints, small)) {
@@ -293,20 +299,21 @@ div#mobile-flip-card {
 }
 
 #quote {
+  padding-top: 150px;
   color: $light-color-main;
   text-align: center;
   width: 70%;
   margin: auto;
   h2 {
     font-size: $quote-size;
-    margin: 150px 0;
+    margin: 10px;
     a {
       color: $light-color-main;
     }
   }
   .card {
     width: 50%;
-    margin: auto;
+    margin: 200px auto 0 auto;
     background-color: $light-color-main;
     color: $dark-color-main;
     padding: 30px;
@@ -320,10 +327,9 @@ div#mobile-flip-card {
     }
   }
   @include maxSize(map-get($breakpoints, medium)) {
-    width: 80%;
+    width: 90%;
     h2 {
       font-size: $title-size;
-      margin: 80px 0;
     }
     .card {
       padding: 15px;
@@ -344,26 +350,39 @@ div#mobile-flip-card {
   background-color: $light-color-main;
   color: $dark-color-main;
   border-radius: $radius;
-  font-size: $quote-size;
-  font-weight: bold;
+  box-shadow: $shadow;
   height: 60px;
   overflow: hidden;
+  ul {
+    list-style-type: none;
+    animation: switchtext 8s infinite;
+    margin: 0;
+    padding: 0;
+    li {
+      font-size: $quote-size;
+      font-weight: bold;
+    }
+  }
+  @include maxSize(map-get($breakpoints, medium)) {
+    height: 35px;
+    ul {
+      li {
+        font-size: $emphasis-size;
+      }
+    }
+  }
+  @include maxSize(map-get($breakpoints, small)) {
+    height: auto;
+    background: none;
+    box-shadow: none;
+    color: $light-color-main;
+    margin: 0;
+    padding: 0;
+    ul {
+      animation: none;
+    }
+  }
 
-}
-.switch-text-list {
-  list-style-type: none;
-  transform: translateY(50px);
-  animation: switch-text 10s infinite;
-  margin: 0;
-}
-
-@keyframes switch-text {
-  0%, 12.66%, 100% {transform:translate3d(0,0,0);}
-  16.66%, 29.32% {transform:translate3d(0,-25%,0);}
-  33.32%,45.98% {transform:translate3d(0,-50%,0);}
-  49.98%,62.64% {transform:translate3d(0,-75%,0);}
-  66.64%,79.3% {transform:translate3d(0,-50%,0);}
-  83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
 
 #contact {
@@ -392,7 +411,7 @@ div#mobile-flip-card {
     align-items: center;
     @include maxSize(map-get($breakpoints, medium)) {
       margin: 0;
-      padding: 50px 0;
+      padding: 40px 0;
     }
   }
   @include maxSize(map-get($breakpoints, small)) {

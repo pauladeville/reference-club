@@ -105,15 +105,7 @@ img.logo-pulse {
   transform: translate(0, -50%);
 }
 
-@-webkit-keyframes opacity {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes change {
+@-webkit-keyframes switchtext {
   0%, 12.66%, 100% {
     transform: translate3d(0, 0, 0);
   }
@@ -133,15 +125,7 @@ img.logo-pulse {
     transform: translate3d(0, -25%, 0);
   }
 }
-@-o-keyframes opacity {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-@-o-keyframes change {
+@-o-keyframes switchtext {
   0%, 12.66%, 100% {
     transform: translate3d(0, 0, 0);
   }
@@ -161,15 +145,7 @@ img.logo-pulse {
     transform: translate3d(0, -25%, 0);
   }
 }
-@-moz-keyframes opacity {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-@-moz-keyframes change {
+@-moz-keyframes switchtext {
   0%, 12.66%, 100% {
     transform: translate3d(0, 0, 0);
   }
@@ -189,15 +165,7 @@ img.logo-pulse {
     transform: translate3d(0, -25%, 0);
   }
 }
-@keyframes opacity {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-@keyframes change {
+@keyframes switchtext {
   0%, 12.66%, 100% {
     transform: translate3d(0, 0, 0);
   }
@@ -300,6 +268,9 @@ img.logo-pulse {
     width: 350px;
     height: 200px;
   }
+  .flip-card p {
+    line-height: 1.2em;
+  }
 }
 @media screen and (max-width: 500px) {
   .flip-card {
@@ -347,6 +318,11 @@ img.logo-pulse {
   border-radius: 500px;
   width: 180px;
   margin-right: 10px;
+}
+@media screen and (max-width: 900px) {
+  .flip-card-front img {
+    width: 130px;
+  }
 }
 .flip-card-front p {
   text-align: center;
@@ -482,7 +458,7 @@ div#mobile-flip-card img {
 }
 
 #skills {
-  background-color: #ebebef;
+  background-color: white;
   background: radial-gradient(circle, #fff 0%, #dddde3 100%);
   width: 100%;
   box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2) inset;
@@ -495,7 +471,7 @@ div#mobile-flip-card img {
 }
 @media screen and (max-width: 900px) {
   #skills h2 {
-    padding: 100px 40px 80px 40px;
+    padding-top: 100px;
     font-size: 2em;
   }
 }
@@ -568,6 +544,7 @@ div#mobile-flip-card img {
 }
 
 #quote {
+  padding-top: 150px;
   color: #fff;
   text-align: center;
   width: 70%;
@@ -575,14 +552,14 @@ div#mobile-flip-card img {
 }
 #quote h2 {
   font-size: 2.5em;
-  margin: 150px 0;
+  margin: 10px;
 }
 #quote h2 a {
   color: #fff;
 }
 #quote .card {
   width: 50%;
-  margin: auto;
+  margin: 200px auto 0 auto;
   background-color: #fff;
   color: #1E1E24;
   padding: 30px;
@@ -597,11 +574,10 @@ div#mobile-flip-card img {
 }
 @media screen and (max-width: 900px) {
   #quote {
-    width: 80%;
+    width: 90%;
   }
   #quote h2 {
     font-size: 2em;
-    margin: 80px 0;
   }
   #quote .card {
     padding: 15px;
@@ -621,39 +597,42 @@ div#mobile-flip-card img {
   background-color: #fff;
   color: #1E1E24;
   border-radius: 5px;
-  font-size: 2.5em;
-  font-weight: bold;
+  box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.2);
   height: 60px;
   overflow: hidden;
 }
-
-.switch-text-list {
+.switch-text-container ul {
   list-style-type: none;
-  transform: translateY(50px);
-  animation: switch-text 10s infinite;
+  animation: switchtext 8s infinite;
   margin: 0;
+  padding: 0;
+}
+.switch-text-container ul li {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+@media screen and (max-width: 900px) {
+  .switch-text-container {
+    height: 35px;
+  }
+  .switch-text-container ul li {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .switch-text-container {
+    height: auto;
+    background: none;
+    box-shadow: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  .switch-text-container ul {
+    animation: none;
+  }
 }
 
-@keyframes switch-text {
-  0%, 12.66%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  16.66%, 29.32% {
-    transform: translate3d(0, -25%, 0);
-  }
-  33.32%, 45.98% {
-    transform: translate3d(0, -50%, 0);
-  }
-  49.98%, 62.64% {
-    transform: translate3d(0, -75%, 0);
-  }
-  66.64%, 79.3% {
-    transform: translate3d(0, -50%, 0);
-  }
-  83.3%, 95.96% {
-    transform: translate3d(0, -25%, 0);
-  }
-}
 #contact {
   margin-top: 200px;
   height: 800px;
@@ -685,7 +664,7 @@ div#mobile-flip-card img {
 @media screen and (max-width: 900px) {
   #contact-text {
     margin: 0;
-    padding: 50px 0;
+    padding: 40px 0;
   }
 }
 @media screen and (max-width: 500px) {

@@ -148,12 +148,7 @@ img.logo-pulse {
 
 // SWITCH TEXT INFINI
 
-@-webkit-keyframes opacity {
-  0%, 100% {opacity:0;}
-  50% {opacity:1;}
-}
-
-@-webkit-keyframes change {
+@-webkit-keyframes switchtext {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}
   33.32%,45.98% {transform:translate3d(0,-50%,0);}
@@ -162,12 +157,7 @@ img.logo-pulse {
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
 
-@-o-keyframes opacity {
-  0%, 100% {opacity:0;}
-  50% {opacity:1;}
-}
-
-@-o-keyframes change {
+@-o-keyframes switchtext {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}
   33.32%,45.98% {transform:translate3d(0,-50%,0);}
@@ -176,12 +166,7 @@ img.logo-pulse {
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
 
-@-moz-keyframes opacity {
-  0%, 100% {opacity:0;}
-  50% {opacity:1;}
-}
-
-@-moz-keyframes change {
+@-moz-keyframes switchtext {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}
   33.32%,45.98% {transform:translate3d(0,-50%,0);}
@@ -190,12 +175,7 @@ img.logo-pulse {
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
 
-@keyframes opacity {
-  0%, 100% {opacity:0;}
-  50% {opacity:1;}
-}
-
-@keyframes change {
+@keyframes switchtext {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}
   33.32%,45.98% {transform:translate3d(0,-50%,0);}
