@@ -352,6 +352,8 @@ div#mobile-flip-card {
   border-radius: $radius;
   box-shadow: $shadow;
   height: 60px;
+  max-width: 650px;
+
   overflow: hidden;
   ul {
     list-style-type: none;

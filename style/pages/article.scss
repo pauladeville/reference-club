@@ -76,12 +76,15 @@ h1.article-title {
   width: 100%;
   margin: 0;
 }
-
 figure {
   margin: 60px 0;
   img {
     box-shadow: $shadow;
     margin-bottom: 20px;
+    @include maxSize(map-get($breakpoints, small)) {
+      width: 80%;
+    }
+  
   }
   text-align: center;
 }
