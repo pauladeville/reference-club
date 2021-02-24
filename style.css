@@ -594,6 +594,7 @@ div#mobile-flip-card img {
 }
 
 .switch-text-container {
+  margin: auto;
   background-color: #fff;
   color: #1E1E24;
   border-radius: 5px;
