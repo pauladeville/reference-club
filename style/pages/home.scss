@@ -153,13 +153,20 @@ div#mobile-flip-card {
     font-size: $quote-size;
     color: $light-color-main;
     font-weight: bold;
-    padding: 30px;
+    padding: 0 30px;
+    &:first-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(2n) {
+      margin-top: 0;
+      margin-bottom: 60px;
+    }
+   
     @include maxSize(map-get($breakpoints, medium)) {
       font-size: $title-size;
     }
     @include maxSize(map-get($breakpoints, small)) {
       font-size: $emphasis-size;
-      margin-bottom: 20px;
     }
   }
   .services-container {
@@ -544,4 +551,11 @@ div#social-container {
   img {
     margin: 0 15px;
   }
+}
+
+#legal {
+  position: relative;
+  bottom: -760px;
+  left: 30px;
+  color: $light-color-main;
 }

@@ -36,7 +36,7 @@
     <div id="main-wrapper">
         <header>
             <a href="index.html">
-                <img class="logo-pulse" id="main-logo" src="images/logo-white.jpg" alt="logo de reference club" loading="lazy">
+                <img itemscope itemtype="https://schema.org/Organization" itemprop="logo" class="logo-pulse" id="main-logo" src="images/logo-white.jpg" alt="logo de reference club" loading="lazy">
             </a>
             <nav id="desktop-nav">
                 <a href="#services" class="link-underline">Services proposés</a>
@@ -61,13 +61,12 @@
 
         <div class="flip-card">
             <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/profil-min.jpg" alt="Photo de profil de Pauline Desmarets" loading="lazy">
+                <div class="flip-card-front" itemscope itemtype="https://schema.org/Person">
+                    <img itemprop="image" src="images/profil-min.jpg" alt="Photo de profil de Pauline Desmarets" loading="lazy">
                     <div>
-                        <p>pauline desmarets</p>
-                        <p>développeuse web diplômée</p>
-                        <p>consultante en stratégie digitale</p>
-                        <p><img src="images/icons/pin.png" class="text-icon" alt="Symbole de position GPS" loading="lazy">Nantes</p> 
+                        <p itemprop="name">pauline desmarets</p>
+                        <p itemprop="jobTitle">développeuse web diplômée<br>consultante SEO</p>
+                        <p itemprop="addressLocality"><img src="images/icons/pin.png" class="text-icon" alt="Symbole de position GPS" loading="lazy">Nantes</p> 
                     </div>
                 </div>
                 <div class="flip-card-back">
@@ -88,7 +87,8 @@
         <img id="wave-top" src="images/waves.svg" alt="Barre séparation entre 2 sections de la page" loading="lazy">
 
         <section id="services">
-            <p class="services-title">REFERENCE CLUB vous accompagne de 2 façons</p>
+            <p itemscope itemtype="https://schema.org/Organization" itemprop="name legalName" class="services-title">REFERENCE CLUB</p>
+            <p class="services-title">vous accompagne de 2 façons</p>
             <div class="services-container">
                 <div class="services-column rellax" data-rellax-speed="1" data-rellax-percentage="0.5">
                     <div id="circle1"></div>
@@ -164,7 +164,10 @@
         </aside>
 
         <footer id="contact">
-            <div id="contact-img"></div>
+            <div id="contact-img">
+                <a id="legal" href="mentions-legales.html">Mentions légales</a>
+
+            </div>
             <div id="contact-text">
 
                 <form action="mail.php" method="post">
@@ -230,6 +233,7 @@
                         </a>
                         </div>
                 </div>
+
             </div>
         </footer>
 
